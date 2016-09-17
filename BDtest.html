@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSSample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+<h1>Check dat console</h1>
+<p></p>
+
+<script type="text/javascript">
+    $(function() {
+        var params = {
+            // Request parameters
+        };
+
+        function expandObject(obj, key) {
+        	var items = [];
+        	items.push("<li>" + key + ":<ul>");
+        	if($.type(obj) === "null") {
+  				items.push("<li>null</li>");
+  			} else {
+	  			$.each(obj, function(inKey, inVal) {
+	  				items.push("<li id='" + inKey + "'>" + inKey + ": " + obj[inKey] + "</li>");
+	  			});
+	  		}
+	  		items.push("</ul></li>");
+	  		return items;
+        }
+      
+        $.ajax({
+            url: "https://api.builddirect.io/products/10089623?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","d83e94bef8644cec98cd9b9662f534c8");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+            //alert("success");
+            /*var items = [];
+  			$.each( data.data, function( key, val ) {
+  				if(typeof val == 'object'){
+  					items.push(expandObject(val, key));
+  					//items.push( "<li id='" + key + "'>" + key + ": " + val + "</li>" );
+  					//items.push("<li>" + $.type(val) + "</li>");
+  				} else {			    	
+			    	items.push( "<li id='" + key + "'>" + key + ": " + val + "</li>" );
+			    }
+			});
+ 
+			$( "<ul/>", {
+			    "class": "my-new-list",
+			    html: items.join( "" )
+			}).appendTo( "body" );*/
+			console.log(data);
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+</script>
+</body>
+</html>
