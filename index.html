@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<script>
+var finLocation;
+var finElevation;
+var finWidth;
+var finHeight;
+var finDistance;
+
+function locations(){
+	var myList=document.getElementById("myList");
+	finLocation = myList.options[myList.selectedIndex].text;
+	document.getElementById("location").value=finLocation;
+}
+function elevations(){
+	var elevationList=document.getElementById("elevationList");
+	finElevation = elevationList.options[elevationList.selectedIndex].text;
+	document.getElementById("elevation").value=finElevation;
+}
+function widths(){
+	var widthList=document.getElementById("widthList");
+	finWidth = widthList.options[widthList.selectedIndex].text;
+	document.getElementById("width").value=finWidth;
+}
+function heights(){
+	var heightList=document.getElementById("heightList");
+	finHeight = heightList.options[heightList.selectedIndex].text;
+	document.getElementById("height").value=finHeight;
+}
+function distances(){
+	var distanceList=document.getElementById("distanceList");
+	finDistance = distanceList.options[distanceList.selectedIndex].text;
+	document.getElementById("distance").value=finDistance;
+}
+</script>
+<body>
+<form>
+<b>Where do you want your product dropped off?</b>
+<select id="myList" onchange="locations()">
+	<option>Inside the house</option>
+	<option>Outside the house</option>
+	<option>Behind the house</option>
+</select>
+<p>Your location: <input type="text" id="location" size="20"></p>
+
+<b>What is the elevation of your destination?</b>
+<select id="elevationList" onchange="elevations()">
+	<option>One story</option>
+	<option>Two stories</option>
+	<option>Apartment building</option>
+</select>
+<p>Your elevation: <input type="text" id="elevation" size="20"></p>
+
+<b>What is the narrowest width in your dropoff route?</b>
+<select id="widthList" onchange="widths()">
+	<option>28 inches</option>
+	<option>30 inches</option>
+	<option>32 inches</option>
+	<option>More than 32 inches</option>
+	<option>Less than 32 inches</option>
+</select>
+<p>Your narrowest width: <input type="text" id="width" size="20"></p>
+
+<b>What is the lowest height in your dropoff route?</b>
+<select id="heightList" onchange="heights()">
+	<option>6 feet</option>
+	<option>8 feet</option>
+	<option>10 feet</option>
+	<option>More than 10 inches</option>
+	<option>Less than 6 inches</option>
+</select>
+<p>Your lowest height: <input type="text" id="height" size="20"></p>	
+
+<b>What is the distance to your location?</b>
+<select id="distanceList" onchange="distances()">
+	<option>18 feet driveway</option>
+	<option>20 feet driveway</option>
+	<option>More than 20 feet driveway</option>
+	<option>Less than 18 feet driveway</option>
+</select>
+<p>Your lowest height: <input type="text" id="distance" size="20"></p>
+		
+</form>
+
+</body>
+</html>
