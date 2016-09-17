@@ -46,12 +46,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+html, body {
+  height: 100%;
+}
 
 /* The Modal (background) */
 
 .modal {
   display: block;
-  position: fixed;
+  position: absolute;
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
@@ -69,38 +72,51 @@ table {
   /* Black w/ opacity */
 }
 
-
 /* Modal Content/Box */
 
 #frame {
   background-color: #fefefe;
   margin: 10% auto;
-  /* 15% from the top and centered */
-  padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
   /* Could be more or less, depending on screen size */
+  min-width: 30%;
 }
-
 
 /* The Close Button */
 
 #close-button {
-  color: #aaa;
+  color: #fff;
   float: right;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: light;
+  display: inline;
+  align-self: flex-end;
+  padding-right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 
 /* Content style */
+body {
+  font-family: HelveticaNeue;
+}
 
 #content-titlebar {
   background: #144A7F;
-  font-family: HelveticaNeue-Bold;
   font-size: 21.7px;
   color: #FFFFFF;
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#content-titlebar h1 {
+  font-size: 1.5em;
+  padding: 15px;
+  font-weight: bold;
 }
 
 #back-button {
@@ -109,4 +125,43 @@ table {
 
 #next-button {
   float: right;
+}
+
+div#frame-controls {
+  margin: 15px;
+}
+
+#content-body {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100%;
+}
+
+#body-box {
+  flex-grow: 2;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+
+.body-title {
+  font-size: 1.3em;
+  margin-bottom: 25px;
+}
+
+.body-text {
+}
+
+#picture {
+  margin: 0 25px 25px 25px;
+}
+
+div#frame {
+  display: flex;
+  flex-direction: column;
 }
