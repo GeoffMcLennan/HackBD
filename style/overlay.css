@@ -131,7 +131,7 @@ div#frame-controls {
   margin: 15px;
 }
 
-#content-body {
+#content-body, #content-img {
   margin-top: 25px;
   display: flex;
   flex-direction: row;
@@ -163,5 +163,10 @@ div#frame-controls {
 
 div#frame {
   display: flex;
+  min-width: 300px;
   flex-direction: column;
 }
+
+
+
+
