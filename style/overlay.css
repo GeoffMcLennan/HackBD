@@ -3,52 +3,144 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-html, body {
+
+html,
+body {
   height: 100%;
 }
+
 
 /* The Modal (background) */
 
@@ -72,16 +164,16 @@ html, body {
   /* Black w/ opacity */
 }
 
+
 /* Modal Content/Box */
 
 #frame {
   background-color: #fefefe;
   margin: 10% auto;
   border: 1px solid #888;
-  width: 50%;
-  /* Could be more or less, depending on screen size */
-  min-width: 30%;
+  width: 80%;
 }
+
 
 /* The Close Button */
 
@@ -99,6 +191,7 @@ html, body {
 
 
 /* Content style */
+
 body {
   font-family: HelveticaNeue;
 }
@@ -131,23 +224,21 @@ div#frame-controls {
   margin: 15px;
 }
 
-#content-body, #content-img {
+#content-body {
   margin-top: 25px;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   height: 100%;
 }
 
 #body-box {
   flex-grow: 2;
-  padding-left: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
 }
-
 
 .body-title {
   font-size: 1.3em;
@@ -155,6 +246,8 @@ div#frame-controls {
 }
 
 .body-text {
+  width: 50%;
+  margin-right: 30px;
 }
 
 #picture {
@@ -168,5 +261,52 @@ div#frame {
 }
 
 
+/* small screens */
 
+@media all and (min-width: 300px) {
+  
+  #frame {
+    background-color: #fefefe;
+    margin: 10% auto;
+    border: 1px solid #888;
+    width: 60%;
+    align-items: stretch;
+  }
+  #content-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  #body-box {
+    padding-left: 0px;
+    display: table;
+    width: 70%;
+  }
+  
+  .body-text {
+    width: 100%;
+  }
+}
 
+@media all and (min-width: 1000px) {
+  #frame {
+    background-color: #fefefe;
+    margin: 10% auto;
+    border: 1px solid #888;
+    width: 45%;
+    /* Could be more or less, depending on screen size */
+  }
+  
+  #content-body {
+    flex-direction: row;
+    padding-left: 25px;
+    align-items: stretch;
+  }
+  
+  .body-text {
+    width: 50%;
+  }
+  
+  #body-box {
+    transform: translateY(40%);
+  }
+}
