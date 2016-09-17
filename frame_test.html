@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>JSSample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		function iframe(name) {
+				$(name).width = $.(window).width();
+		}
+	</script>
+</head>
+<body>
+	<iframe id="main" onload="iframe(main);" src="http://builddirect.com/" frameborder="0" seamless="true"></iframe>
+	<p id="content">
+	</p>
+</body>
+</html>
