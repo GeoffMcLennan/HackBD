@@ -194,7 +194,7 @@ body {
 /* Content style */
 
 body {
-  font-family: HelveticaNeue;
+  font-family: HelveticaNeue, Helvetica, sans-serif
 }
 
 #content-carousel {
