@@ -297,6 +297,10 @@ div#frame {
   opacity: 0;
 }
 
+.question {
+  padding-bottom: 40px;
+}
+
 /* small screens */
 
 @media all and (min-width: 300px) {
@@ -314,7 +318,29 @@ div#frame {
   }
   .body-box {
     padding-left: 0px;
-    display: table;
+    width: 70%;
+  }
+  
+  .body-text {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 700px) {
+  
+  #frame {
+    background-color: #fefefe;
+    margin: 10% auto;
+    border: 1px solid #888;
+    width: 60%;
+    align-items: stretch;
+  }
+  .content-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .body-box {
+    padding-left: 0px;
     width: 70%;
   }
   
@@ -340,10 +366,11 @@ div#frame {
   }
   
   .body-text {
-    width: 60%;
+    width: 100%;
   }
   
   #body-box {
     transform: translateY(40%);
+    width: 70%;
   }
 }

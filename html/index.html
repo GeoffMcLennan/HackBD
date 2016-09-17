@@ -35,8 +35,6 @@ function distances(){
 <head>
   <meta charset="utf-8">
   <link href="../style/overlay.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
   <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
 </head>
 
@@ -69,6 +67,8 @@ function distances(){
 						<option>Outside the house</option>
 						<option>Behind the house</option>
 					</select>
+              <br>
+              <br>
             </div>
           </div>
 
@@ -87,6 +87,8 @@ function distances(){
 						<option>Two stories</option>
 						<option>Apartment building</option>
 					</select>
+              <br>
+              <br>
             </div>
           </div>
 
@@ -107,9 +109,11 @@ function distances(){
 						<option>More than 32 inches</option>
 						<option>Less than 32 inches</option>
 					</select>
+              <br>
+              <br>
             </div>
           </div>
-          
+
           <div class="content-body" id="content-spacer">
             <div class="content-img">
               <img id="picture" src="../images/1.png">
@@ -165,9 +169,9 @@ function distances(){
         modal.style.display = "none";
       }
     }
-    
+
     var currentIndex = 0;
-    
+
     $('#next-button').on('click', function() {
       if (currentIndex == 0) {
         $('#content0').css('display', 'none');
@@ -186,7 +190,7 @@ function distances(){
         currentIndex = 0;
       }
     });
-    
+
     $('#back-button').on('click', function() {
       if (currentIndex == 0) {
         $('#content0').css('display', 'none');
@@ -202,7 +206,7 @@ function distances(){
         $('#content0').css('display', 'none');
         $('#content1').css('display', 'flex');
         $('#content2').css('display', 'none');
-        currentIndex --;
+        currentIndex--;
       }
     });
 
