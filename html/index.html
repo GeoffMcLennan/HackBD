@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <link href="../style/overlay.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,20 +21,73 @@
           <h1>Inside Delivery Wizard</h1>
           <span id="close-button">x</span>
         </div>
-        <div id="content-body">
-          <div id="content-img">
-            <img id="picture" src="../images/deliveryphoto.png">
+        <div id="content-carousel">
+          <div class="content-body" id="content0">
+            <div class="content-img">
+              <img id="picture" src="../images/1.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome! 1</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <br>
+              <form class="question">
+                <select>
+                  <option value="house">HOUSE</option>
+                </select>
+              </form>
+            </div>
           </div>
-          <div id="body-box">
-            <h2 class="body-title">Welcome!</h2>
-            <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
-            </p>
-            <br>
-            <form class="question">
-              <select>
-                <option value="house">HOUSE</option>
-              </select>
-            </form>
+
+          <div class="content-body" id="content1">
+            <div class="content-img">
+              <img id="picture" src="../images/2.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome! 2</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <br>
+              <form class="question">
+                <select>
+                  <option value="house">HOUSE</option>
+                </select>
+              </form>
+            </div>
+          </div>
+
+          <div class="content-body" id="content2">
+            <div class="content-img">
+              <img id="picture" src="../images/3.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome! 3</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <br>
+              <form class="question">
+                <select>
+                  <option value="house">HOUSE</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          
+          <div class="content-body" id="content-spacer">
+            <div class="content-img">
+              <img id="picture" src="../images/1.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome!</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <br>
+              <form class="question">
+                <select>
+                  <option value="house">HOUSE</option>
+                </select>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -68,8 +124,49 @@
         modal.style.display = "none";
       }
     }
+    
+    var currentIndex = 0;
+    
+    $('#next-button').on('click', function() {
+      if (currentIndex == 0) {
+        $('#content0').css('display', 'none');
+        $('#content1').css('display', 'flex');
+        $('#content2').css('display', 'none');
+        currentIndex++;
+      } else if (currentIndex == 1) {
+        $('#content0').css('display', 'none');
+        $('#content1').css('display', 'none');
+        $('#content2').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 2) {
+        $('#content0').css('display', 'flex');
+        $('#content1').css('display', 'none');
+        $('#content2').css('display', 'none');
+        currentIndex = 0;
+      }
+    });
+    
+    $('#back-button').on('click', function() {
+      if (currentIndex == 0) {
+        $('#content0').css('display', 'none');
+        $('#content1').css('display', 'none');
+        $('#content2').css('display', 'flex');
+        currentIndex = 2
+      } else if (currentIndex == 1) {
+        $('#content0').css('display', 'flex');
+        $('#content1').css('display', 'none');
+        $('#content2').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 2) {
+        $('#content0').css('display', 'none');
+        $('#content1').css('display', 'flex');
+        $('#content2').css('display', 'none');
+        currentIndex --;
+      }
+    });
 
   </script>
+
 
 </body>
 

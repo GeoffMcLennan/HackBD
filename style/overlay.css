@@ -172,6 +172,7 @@ body {
   margin: 10% auto;
   border: 1px solid #888;
   width: 80%;
+  height: auto;
 }
 
 
@@ -194,6 +195,11 @@ body {
 
 body {
   font-family: HelveticaNeue;
+}
+
+#content-carousel {
+  position: relative;
+  clear: both;
 }
 
 button {
@@ -231,7 +237,7 @@ div#frame-controls {
   margin: 15px;
 }
 
-#content-body {
+.content-body {
   margin-top: 25px;
   display: flex;
   flex-direction: row;
@@ -239,7 +245,7 @@ div#frame-controls {
   height: 100%;
 }
 
-#body-box {
+.body-box {
   flex-grow: 2;
   display: flex;
   flex-direction: column;
@@ -267,6 +273,29 @@ div#frame {
   flex-direction: column;
 }
 
+#content0 {
+  z-index: 8;
+  top: 0;
+  position: absolute;
+}
+
+#content1 {
+  z-index: 7;
+  top: 0;
+  position: absolute;
+  display: none;
+}
+
+#content2 {
+  z-index: 6;
+  top: 0;
+  position: absolute;
+  display: none;
+}
+
+#content-spacer {
+  opacity: 0;
+}
 
 /* small screens */
 
@@ -279,11 +308,11 @@ div#frame {
     width: 60%;
     align-items: stretch;
   }
-  #content-body {
+  .content-body {
     flex-direction: column;
     align-items: center;
   }
-  #body-box {
+  .body-box {
     padding-left: 0px;
     display: table;
     width: 70%;
@@ -303,7 +332,7 @@ div#frame {
     /* Could be more or less, depending on screen size */
   }
   
-  #content-body {
+  .content-body {
     display: flex;
     flex-direction: row;
     padding-left: 25px;
