@@ -196,6 +196,13 @@ body {
   font-family: HelveticaNeue;
 }
 
+button {
+  color: #fff;
+  background: #144A7F;
+  border: none;
+  font-size: 1em;
+}
+
 #content-titlebar {
   background: #144A7F;
   font-size: 21.7px;
@@ -297,13 +304,14 @@ div#frame {
   }
   
   #content-body {
+    display: flex;
     flex-direction: row;
     padding-left: 25px;
     align-items: stretch;
   }
   
   .body-text {
-    width: 50%;
+    width: 60%;
   }
   
   #body-box {
