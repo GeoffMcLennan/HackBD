@@ -42,7 +42,7 @@ function getParams(weightPerBox) {
         unpack = false;
     }
 
-    $("p#skuOutput").append(totalWeight + ", " + numStairs + ", " + distance + ", "
-        + palletCount + ", " + boxCount + ", " + unpack + ", " + delArea);
+    //$("p#skuOutput").append(totalWeight + ", " + numStairs + ", " + distance + ", "
+    //    + palletCount + ", " + boxCount + ", " + unpack + ", " + delArea);
 
 }
