@@ -35,8 +35,11 @@
     finDistance = distanceList.options[distanceList.selectedIndex].text;
     document.getElementById("distance").value = finDistance;
   }
-
-  }
+function calculate(){
+	if (finLocation.equalsIgnoreCase(locationsEnum.){
+		
+	}
+}
 
 </script>
 
@@ -103,18 +106,20 @@
               <img id="picture" src="../images/3.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 3</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              <h2 class="body-title">Distance Required</h2>
+              <p class="body-text">
+					What is the walking distance to your 
+					drop-off destination?
               </p>
               <br>
-              <b>What is the narrowest width in your dropoff route?</b>
-              <select id="widthList" onchange="widths()">
-                <option>28 inches</option>
-                <option>30 inches</option>
-                <option>32 inches</option>
-                <option>More than 32 inches</option>
-                <option>Less than 32 inches</option>
-              </select>
+				<b>What is the distance to your location?</b>
+				<select id="distanceList" onchange="distances()">
+					<option>Choose one</option>
+					<option>Less than 15'</option>
+					<option>15' - 30'</option>
+					<option>30' - 50'</option>
+					<option>More than 50'</option>
+				</select>
               <br>
               <br>
             </div>
@@ -125,18 +130,19 @@
               <img id="picture" src="../images/4.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 4</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              <h2 class="body-title">It's All About the Elevation</h2>
+              <p class="body-text">
+					No matter the journey, our White Glove service
+					experts will get your goods where they need to go!
               </p>
               <br>
-              <b>What is the narrowest width in your dropoff route?</b>
-              <select id="widthList" onchange="widths()">
-                <option>28 inches</option>
-                <option>30 inches</option>
-                <option>32 inches</option>
-                <option>More than 32 inches</option>
-                <option>Less than 32 inches</option>
-              </select>
+				<b>What is the elevation of your destination?</b>
+				<select id="elevationList" onchange="elevations()">
+					<option>Choose one</option>
+					<option>One story</option>
+					<option>Two stories</option>
+					<option>Apartment building</option>
+				</select>
               <br>
               <br>
             </div>
@@ -147,17 +153,20 @@
               <img id="picture" src="../images/5.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 5</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              <h2 class="body-title">The Wiggle Room!</h2>
+              <p class="body-text">
+					With various shaped product, we need to ensure we can
+					get everything through your doorways.
               </p>
               <br>
               <b>What is the narrowest width in your dropoff route?</b>
               <select id="widthList" onchange="widths()">
+                <option>Less than 28 inches</option>
                 <option>28 inches</option>
                 <option>30 inches</option>
                 <option>32 inches</option>
                 <option>More than 32 inches</option>
-                <option>Less than 32 inches</option>
+                <option>No Doorways</option>
               </select>
               <br>
               <br>
@@ -169,18 +178,15 @@
               <img id="picture" src="../images/6.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 6</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              <h2 class="body-title">We Care About the Details!</h2>
+              <p class="body-text">
+					Please let us know any additional things that 
+					may help the White Glove service experts, and we 
+					will contact you if we have any questions.
               </p>
               <br>
               <b>What is the narrowest width in your dropoff route?</b>
-              <select id="widthList" onchange="widths()">
-                <option>28 inches</option>
-                <option>30 inches</option>
-                <option>32 inches</option>
-                <option>More than 32 inches</option>
-                <option>Less than 32 inches</option>
-              </select>
+              <textarea rows="3" cols="30"></textarea>
               <br>
               <br>
             </div>
@@ -191,18 +197,14 @@
               <img id="picture" src="../images/7.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 7</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              <h2 class="body-title">Your Personalized Quot</h2>
+              <p class="body-text">
+					Based on our calculations, your Inside Delivery
+					total will be: ###.##
               </p>
               <br>
-              <b>What is the narrowest width in your dropoff route?</b>
-              <select id="widthList" onchange="widths()">
-                <option>28 inches</option>
-                <option>30 inches</option>
-                <option>32 inches</option>
-                <option>More than 32 inches</option>
-                <option>Less than 32 inches</option>
-              </select>
+              <b>Thank you for using our White Glover service experts!</b>
+              <h6> *Personalized quote dependent on the accuracy of information provided. Subject to ochange as determined by our Delivery Experts.</h6>
               <br>
               <br>
             </div>
@@ -212,17 +214,17 @@
               <img id="picture" src="../images/1.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome!</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              <h2 class="body-title">Black Spacer!</h2>
+              <p class="body-text">Black Spacer!
               </p>
               <br>
-              <b>What is the lowest height in your dropoff route?</b>
+              <b>Positioning, don't remove!?</b>
               <select id="heightList" onchange="heights()">
-                <option>6 feet</option>
-                <option>8 feet</option>
-                <option>10 feet</option>
-                <option>More than 10 inches</option>
-                <option>Less than 6 inches</option>
+                <option>0</option>
+                <option>0</option>
+                <option>0</option>
+                <option>0</option>
+                <option>0</option>
               </select>
             </div>
           </div>
