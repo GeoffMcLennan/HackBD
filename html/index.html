@@ -58,18 +58,9 @@ function distances(){
               <img id="picture" src="../images/1.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 1</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              <h2 class="body-title">Welcome!</h2>
+              <p class="body-text">Our Inside Delivery tool will guide you through the steps needed to get an instant delivery quote.
               </p>
-              <br>
-              <form class="question">
-                <b>Where do you want your product dropped off?</b>
-					<select id="myList" onchange="locations()">
-						<option>Inside the house</option>
-						<option>Outside the house</option>
-						<option>Behind the house</option>
-					</select>
-              <br>
               <br>
             </div>
           </div>
@@ -79,16 +70,19 @@ function distances(){
               <img id="picture" src="../images/2.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 2</h2>
+              <h2 class="body-title">About Your Home</h2>
               <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
               </p>
-              <br>
-              <b>What is the elevation of your destination?</b>
-					<select id="elevationList" onchange="elevations()">
-						<option>One story</option>
-						<option>Two stories</option>
-						<option>Apartment building</option>
-					</select>
+              <div id="house-selctor">
+                <input type="radio" checked="checked" name="house-select" value="house">
+                <label for="house" class="selector house">House</label>
+
+                <input type="radio" name="house-select" value="yard">
+                <label for="yard" class="selector yard">Yard</label>
+
+                <input type="radio" name="house-select" value="apartment">
+                <label for="apartment" class="selector apartment">Apartment</label>
+              </div>
               <br>
               <br>
             </div>

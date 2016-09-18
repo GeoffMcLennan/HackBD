@@ -247,10 +247,15 @@ div#frame-controls {
 
 .body-box {
   flex-grow: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   height: 100%;
+}
+
+.body-box h2 {
+  padding-top: 25px;
+}
+
+.body-box p {
+  padding-top: 25px;
 }
 
 .body-title {
@@ -304,7 +309,6 @@ div#frame {
 /* small screens */
 
 @media all and (min-width: 300px) {
-  
   #frame {
     background-color: #fefefe;
     margin: 10% auto;
@@ -320,14 +324,12 @@ div#frame {
     padding-left: 0px;
     width: 70%;
   }
-  
   .body-text {
     width: 100%;
   }
 }
 
 @media all and (min-width: 700px) {
-  
   #frame {
     background-color: #fefefe;
     margin: 10% auto;
@@ -336,6 +338,7 @@ div#frame {
     align-items: stretch;
   }
   .content-body {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -343,7 +346,6 @@ div#frame {
     padding-left: 0px;
     width: 70%;
   }
-  
   .body-text {
     width: 100%;
   }
@@ -357,18 +359,15 @@ div#frame {
     width: 45%;
     /* Could be more or less, depending on screen size */
   }
-  
   .content-body {
     display: flex;
     flex-direction: row;
     padding-left: 25px;
     align-items: stretch;
   }
-  
   .body-text {
     width: 100%;
   }
-  
   #body-box {
     transform: translateY(40%);
     width: 70%;
