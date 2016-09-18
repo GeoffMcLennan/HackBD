@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<script>
+  var finLocation;
+  var finElevation;
+  var finWidth;
+  var finHeight;
+  var finDistance;
+
+  function locations() {
+    var myList = document.getElementById("myList");
+    finLocation = myList.options[myList.selectedIndex].text;
+    document.getElementById("location").value = finLocation;
+  }
+
+  function elevations() {
+    var elevationList = document.getElementById("elevationList");
+    finElevation = elevationList.options[elevationList.selectedIndex].text;
+    document.getElementById("elevation").value = finElevation;
+  }
+
+  function widths() {
+    var widthList = document.getElementById("widthList");
+    finWidth = widthList.options[widthList.selectedIndex].text;
+    document.getElementById("width").value = finWidth;
+  }
+
+  function heights() {
+    var heightList = document.getElementById("heightList");
+    finHeight = heightList.options[heightList.selectedIndex].text;
+    document.getElementById("height").value = finHeight;
+  }
+
+  function distances() {
+    var distanceList = document.getElementById("distanceList");
+    finDistance = distanceList.options[distanceList.selectedIndex].text;
+    document.getElementById("distance").value = finDistance;
+  }
+
+  function calculate() {
+    if (finLocation.equalsIgnoreCase(locationsEnum.) {
+
+      }
+    }
+
+</script>
+
+<head>
+  <meta charset="utf-8">
+  <link href="../style/overlay.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Trigger/Open The Modal -->
+  <button id="myBtn">Open Modal</button>
+
+  <!-- The Modal -->
+  <div id="overlay-container" class="modal">
+    <div id="frame">
+      <div id="frame-content">
+        <div id="content-titlebar">
+          <h1>Inside Delivery Wizard</h1>
+          <span id="close-button">x</span>
+        </div>
+        <div id="content-carousel">
+          <div class="content-body" id="content0">
+            <div class="content-img">
+              <img id="picture" src="../images/1.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome!</h2>
+              <p class="body-text">Our Inside Delivery tool will guide you through the steps needed to get an instant delivery quote.
+              </p>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content1">
+            <div class="content-img">
+              <img id="picture" src="../images/2.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">About Your Home</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <div id="house-selctor">
+                <label>
+                  <input type="radio" name="house-select" value="yard" />
+                  <img src="..\images\house-selector\yard.png">
+                </label>
+                <label>
+                  <input type="radio" name="house-select" value="house" />
+                  <img src="..\images\house-selector\house.png">
+                </label>
+                <label>
+                  <input type="radio" name="house-select" value="apartment" />
+                  <img src="..\images\house-selector\apartment.png">
+                </label>
+              </div>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content2">
+            <div class="content-img">
+              <img id="picture" src="../images/3.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Distance Required</h2>
+              <p class="body-text">
+                What is the walking distance to your drop-off destination?
+              </p>
+              <br>
+              <b>What is the distance to your location?</b>
+              <select id="distanceList" onchange="distances()">
+                <option>Choose one</option>
+                <option>Less than 15'</option>
+                <option>15' - 30'</option>
+                <option>30' - 50'</option>
+                <option>More than 50'</option>
+              </select>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content3">
+            <div class="content-img">
+              <img id="picture" src="../images/4.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">It's All About the Elevation</h2>
+              <p class="body-text">
+                No matter the journey, our White Glove service experts will get your goods where they need to go!
+              </p>
+              <br>
+              <b>What is the elevation of your destination?</b>
+              <select id="elevationList" onchange="elevations()">
+                <option>Choose one</option>
+                <option>One story</option>
+                <option>Two stories</option>
+                <option>Apartment building</option>
+              </select>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content4">
+            <div class="content-img">
+              <img id="picture" src="../images/5.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">The Wiggle Room!</h2>
+              <p class="body-text">
+                With various shaped product, we need to ensure we can get everything through your doorways.
+              </p>
+              <br>
+              <b>What is the narrowest width in your dropoff route?</b>
+              <select id="widthList" onchange="widths()">
+                <option>Less than 28 inches</option>
+                <option>28 inches</option>
+                <option>30 inches</option>
+                <option>32 inches</option>
+                <option>More than 32 inches</option>
+                <option>No Doorways</option>
+              </select>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content5">
+            <div class="content-img">
+              <img id="picture" src="../images/6.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">We Care About the Details!</h2>
+              <p class="body-text">
+                Please let us know any additional things that may help the White Glove service experts, and we will contact you if we have any questions.
+              </p>
+              <br>
+              <b>What is the narrowest width in your dropoff route?</b>
+              <textarea rows="3" cols="30"></textarea>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content6">
+            <div class="content-img">
+              <img id="picture" src="../images/7.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Your Personalized Quote</h2>
+              <p class="body-text">
+                Based on our calculations, your Inside Delivery total will be:
+              </p>
+              <br>
+              <h1>###.##</h1>
+              <br>
+              <b>Thank you for using our White Glover service experts!</b>
+              <p id="disclaimer"> *Personalized quote dependent on the accuracy of information provided. Subject to ochange as determined by our Delivery Experts.<p>
+              <br>
+              <br>
+            </div>
+          </div>
+          <div class="content-body" id="content-spacer">
+            <div class="content-img">
+              <img id="picture" src="../images/1.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Black Spacer!</h2>
+              <p class="body-text">Black Spacer!
+              </p>
+              <br>
+              <b>Positioning, don't remove!?</b>
+              <select id="heightList" onchange="heights()">
+                <option>0</option>
+                <option>0</option>
+                <option>0</option>
+                <option>0</option>
+                <option>0</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="frame-controls">
+        <button id="back-button">&lt;&nbsp;Back</button>
+        <button id="next-button">Next&nbsp;&gt;</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('overlay-container');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementById("close-button");
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    var currentIndex = 0;
+
+    $('#next-button').on('click', function() {
+      if (currentIndex == 0) {
+        $('#content0').css('display', 'none');
+        $('#content1').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 1) {
+        $('#content1').css('display', 'none');
+        $('#content2').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 2) {
+        $('#content2').css('display', 'none');
+        $('#content3').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 3) {
+        $('#content3').css('display', 'none');
+        $('#content4').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 4) {
+        $('#content4').css('display', 'none');
+        $('#content5').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 5) {
+        $('#content5').css('display', 'none');
+        $('#content6').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 6) {
+        $('#content0').css('display', 'none');
+        $('#content1').css('display', 'none');
+        $('#content2').css('display', 'none');
+        $('#content3').css('display', 'none');
+        $('#content4').css('display', 'none');
+        $('#content5').css('display', 'none');
+        $('#content6').css('display', 'none');
+        currentIndex++;
+      }
+    });
+
+    $('#back-button').on('click', function() {
+      if (currentIndex == 0) {
+        $('#content0').css('display', 'none');
+        $('#content1').css('display', 'none');
+        $('#content2').css('display', 'none');
+        $('#content3').css('display', 'none');
+        $('#content4').css('display', 'none');
+        $('#content5').css('display', 'none');
+        $('#content6').css('display', 'none');
+        currentIndex == 6;
+      } else if (currentIndex == 1) {
+        $('#content0').css('display', 'flex');
+        $('#content1').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 2) {
+        $('#content1').css('display', 'flex');
+        $('#content2').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 3) {
+        $('#content2').css('display', 'flex');
+        $('#content3').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 4) {
+        $('#content3').css('display', 'flex');
+        $('#content4').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 5) {
+        $('#content4').css('display', 'flex');
+        $('#content5').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 6) {
+        $('#content5').css('display', 'flex');
+        $('#content6').css('display', 'none');
+        currentIndex--;
+      }
+    });
+
+  </script>
+
+
+</body>
+
+</html>
