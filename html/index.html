@@ -1,79 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <link href="../style/overlay.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../scripts/Metric.js"></script>
   <script type="text/javascript" src="../scripts/globalVariables.js"></script>
   <script type="text/javascript" src="../scripts/calculate.js"></script>
-
-  <script src="../scripts/fetchProduct.js" type="text/javascript"></script>
+  <script type="text/javascript" src="../scripts/fetchProduct.js"></script>
   <script src="../scripts/calc.js" type="text/javascript"></script>
+
 </head>
-<body>
-<main>
-<img src="../images/Background.jpg" alt="" usemap="#Map" />
-<map name="Map" id="Map">
-    <area alt="" title="" id="imgMap" shape="poly" coords="1005,1159,1221,1158,1221,1199,1006,1200" />
-</map>
-  <!-- Trigger/Open The Modal -->
-  <button id="myBtn">Open Modal</button>
 
-  <!-- Hidden inputs for testing -->
-  <input type="hidden" id="skuNumber" value="15118251">
-  <input type="hidden" id="boxCount" value="3">
+<body onload=(dist.generateForm(2),elevation.generateForm(3))>
+  <main>
+    <img src="../images/Background.jpg" alt="" usemap="#Map" />
+    <map name="Map" id="Map">
+      <area alt="" title="" id="imgMap" shape="poly" coords="1005,1159,1221,1158,1221,1199,1006,1200" />
+    </map>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
 
-  <!-- The Modal -->
-  <div id="overlay-container" class="modal">
-    <div id="frame">
-      <div id="frame-content">
-        <div id="content-titlebar">
-          <h1>Inside Delivery Wizard</h1>
-          <span id="close-button">x</span>
-        </div>
-        <div id="content-carousel">
-          <div class="content-body" id="content0">
-            <div class="content-img">
-              <img id="picture" src="../images/1.png">
-            </div>
-            <div class="body-box">
-              <h2 class="body-title">Welcome!</h2>
-              <p class="body-text">Our Inside Delivery tool will guide you through the steps needed to get an instant delivery quote.
-              </p>
-              <br>
-            </div>
+    <!-- Hidden inputs for testing -->
+    <input type="hidden" id="skuNumber" value="15118251">
+    <input type="hidden" id="boxCount" value="3">
+
+    <!-- The Modal -->
+    <div id="overlay-container" class="modal">
+      <div id="frame">
+        <div id="frame-content">
+          <div id="content-titlebar">
+            <h1>Inside Delivery Wizard</h1>
+            <span id="close-button">x</span>
           </div>
-
-          <div class="content-body" id="content1">
-            <div class="content-img">
-              <img id="picture" src="../images/2.png">
-            </div>
-            <div class="body-box">
-              <h2 class="body-title">About Your Home</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about the destination.
-              </p>
-              <br>
-              <b class="questions">Outdoor, house, or apartment?</b>
-              <div id="house-selctor">
-                <label>
-                  <input type="radio" name="house-select" value="0" checked="checked" />
-                  <img src="..\images\house-selector\yard.png">
-                </label>
-                <label>
-                  <input type="radio" name="house-select" value="1" />
-                  <img src="..\images\house-selector\house.png">
-                </label>
-                <label>
-                  <input type="radio" name="house-select" value="2" />
-                  <img src="..\images\house-selector\apartment.png">
-                </label>
+          <div id="content-carousel">
+            <div class="content-body" id="content0">
+              <div class="content-img">
+                <img id="picture" src="../images/1.png">
               </div>
-              <br>
-              <br>
+              <div class="body-box">
+                <h2 class="body-title">Welcome!</h2>
+                <p class="body-text">Our Inside Delivery tool will guide you through the steps needed to get an instant delivery quote.
+                </p>
+                <br>
+              </div>
             </div>
-          </div>
 
+            <div class="content-body" id="content1">
+              <div class="content-img">
+                <img id="picture" src="../images/2.png">
+              </div>
+              <div class="body-box">
+                <h2 class="body-title">About Your Home</h2>
+                <p class="body-text">In order to help us customize your Inside Delivery we need some details about the destination.
+                </p>
+                <br>
+                <b class="questions">Outdoor, house, or apartment?</b>
+                <div id="house-selctor">
+                  <label>
+                    <input type="radio" name="house-select" value="0" checked="checked" />
+                    <img src="..\images\house-selector\yard.png">
+                  </label>
+                  <label>
+                    <input type="radio" name="house-select" value="1" />
+                    <img src="..\images\house-selector\house.png">
+                  </label>
+                  <label>
+                    <input type="radio" name="house-select" value="2" />
+                    <img src="..\images\house-selector\apartment.png">
+                  </label>
+                </div>
+                <br>
+                <br>
+              </div>
+            </div>
+
+            <!--
           <div class="content-body" id="content2">
             <div class="content-img">
               <img id="picture" src="../images/3.png">
@@ -95,7 +99,10 @@
               <br>
             </div>
           </div>
+        -->
 
+
+            <!--
           <div class="content-body" id="content3">
             <div class="content-img">
               <img id="picture" src="../images/4.png">
@@ -117,93 +124,107 @@
               <br>
             </div>
           </div>
+        -->
 
-          <div class="content-body" id="content4">
-            <div class="content-img">
-              <img id="picture" src="../images/5.png">
+            <div class="content-body" id="content4">
+              <div class="content-img">
+                <img id="picture" src="../images/5.png">
+              </div>
+              <div class="body-box">
+                <h2 class="body-title">The Wiggle Room!</h2>
+                <p class="body-text">
+                  With various shaped product, we need to ensure we can get everything through your doorways.
+                </p>
+                <br>
+                <b class="questions">What is the narrowest space that your shipment has to travel through?</b>
+                <select id="widthList">
+                  <option value="0">Less than 48&#34; wide</option>
+                  <option value="1">Greater than 48&#34; wide</option>
+                </select>
+                <br>
+                <br>
+              </div>
             </div>
-            <div class="body-box">
-              <h2 class="body-title">The Wiggle Room!</h2>
-              <p class="body-text">
-                With various shaped product, we need to ensure we can get everything through your doorways.
-              </p>
-              <br>
-              <b class="questions">What is the narrowest space that your shipment has to travel through?</b>
-              <select id="widthList">
-                <option value="0">Less than 48&#34; wide</option>
-                <option value="1">Greater than 48&#34; wide</option>
-              </select>
-              <br>
-              <br>
-            </div>
-          </div>
 
-          <div class="content-body" id="content5">
-            <div class="content-img">
-              <img id="picture" src="../images/6.png">
+            <div class="content-body" id="content5">
+              <div class="content-img">
+                <img id="picture" src="../images/6.png">
+              </div>
+              <div class="body-box">
+                <h2 class="body-title">We Care About the Details!</h2>
+                <p class="body-text">
+                  Please let us know any additional things that may help our service experts. We will contact you if we have any questions.
+                </p>
+                <br>
+                <!--<b class="questions">What is the narrowest width in your dropoff route?</b>-->
+                <br>
+                <textarea rows="2" cols="20"></textarea>
+                <br>
+                <br>
+              </div>
             </div>
-            <div class="body-box">
-              <h2 class="body-title">We Care About the Details!</h2>
-              <p class="body-text">
-                Please let us know any additional things that may help our service experts. We will contact you if we have any questions.
-              </p>
-              <br>
-              <!--<b class="questions">What is the narrowest width in your dropoff route?</b>-->
-              <br>
-              <textarea rows="2" cols="20"></textarea>
-              <br>
-              <br>
-            </div>
-          </div>
 
-          <div class="content-body" id="content6">
-            <div class="content-img">
-              <img id="picture" src="../images/7.png">
+            <!-- <div class="content-body" id="content6">
+              <div class="content-img">
+                <img id="picture" src="../images/7.png">
+              </div>
+              <div class="body-box">
+                <h2 class="body-title">Order Confirmation</h2>
+                <p class="body-text">
+                  Please confirm that the information below is correct:
+                </p>
+                <br>
+                <p class="confirmation-content"></p>
+              </div>
+            </div> -->
+            <div class="content-body" id="content6">
+              <div class="content-img">
+                <img id="picture" src="../images/7.png">
+              </div>
+              <div class="body-box">
+                <h2 class="body-title">Your Personalized Quote</h2>
+                <p class="body-text">
+                  Based on our calculations, your Inside Delivery total will be:
+                </p>
+                <br>
+                <h1 id="estimate" style="font-size: 1.5em; font-weight: bold;"></h1>
+                <br>
+                <b>Thank you for using our White Glove service calculator!</b>
+                <p id="disclaimer"> *Personalized quote dependent on the accuracy of information provided. Subject to ochange as determined by our Delivery Experts.
+                  <p>
+                    <br>
+                    <br>
+              </div>
             </div>
-            <div class="body-box">
-              <h2 class="body-title">Your Personalized Quote</h2>
-              <p class="body-text">
-                Based on our calculations, your Inside Delivery total will be:
-              </p>
-              <br>
-              <h1 id="estimate" style="font-size: 1.5em; font-weight: bold;"></h1>
-              <br>
-              <b>Thank you for using our White Glove service calculator!</b>
-              <p id="disclaimer"> *Personalized quote dependent on the accuracy of information provided. Subject to ochange as determined by our Delivery Experts.
-                <p>
-                  <br>
-                  <br>
-            </div>
-          </div>
-          <div class="content-body" id="content-spacer">
-            <div class="content-img">
-              <img id="picture" src="../images/1.png">
-            </div>
-            <div class="body-box">
-              <h2 class="body-title">Black Spacer!</h2>
-              <p class="body-text">Black Spacer!
-              </p>
-              <br>
-              <b>Positioning, don&#39;t remove!?</b>
-              <select id="heightList" onchange="heights()">
-                <option>0</option>
-                <option>0</option>
-                <option>0</option>
-                <option>0</option>
-                <option>0</option>
-              </select>
+            <div class="content-body" id="content-spacer">
+              <div class="content-img">
+                <img id="picture" src="../images/1.png">
+              </div>
+              <div class="body-box">
+                <h2 class="body-title">Black Spacer!</h2>
+                <p class="body-text">Black Spacer!
+                </p>
+                <br>
+                <b>Positioning, don&#39;t remove!?</b>
+                <select id="heightList" onchange="heights()">
+                  <option>0</option>
+                  <option>0</option>
+                  <option>0</option>
+                  <option>0</option>
+                  <option>0</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div id="frame-controls">
-        <button id="back-button">&lt;&nbsp;Back</button>
-        <button id="next-button">Next&nbsp;&gt;</button>
+        <div id="frame-controls">
+          <button id="back-button">&lt;&nbsp;Back</button>
+          <button id="next-button">Next&nbsp;&gt;</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script type="text/javascript" src="../scripts/modal.js"></script>
+    <script type="text/javascript" src="../scripts/modal.js"></script>
 
 </body>
 

@@ -29,10 +29,11 @@ function fetchProduct() {
 function getParams(weightPerBox) {
     boxCount = $("input#boxCount").val();
     palletCount = $("input#palletCount").val();
-    delArea = $("input[name=house-select]:checked").val();
-    distance = parseInt($("select#distanceList").val());
-    numStairs = $("select#elevationList").val();
-    chokePoint = $("select#widthList").val();
+    delArea = $("select#location").val();
+    distance = $("select#distance").val();
+    console.log("distance: " + distance);
+    numStairs = $("select#numStairs").val();
+    chokePoint = $("select#chokePoint").val();
 
     totalWeight = weightPerBox * boxCount;
 
