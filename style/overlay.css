@@ -141,11 +141,18 @@ body {
   height: 100%;
 }
 
-/**********************/
-/***** Modal Popup ****/
+
 /**********************/
 
+
+/***** Modal Popup ****/
+
+
+/**********************/
+
+
 /* The Modal (background) */
+
 .modal {
   display: block;
   position: absolute;
@@ -168,6 +175,7 @@ body {
 
 
 /* Modal Content/Box */
+
 #frame {
   background-color: #fefefe;
   margin: 10% auto;
@@ -178,6 +186,7 @@ body {
 
 
 /* The Close Button */
+
 #close-button {
   color: #fff;
   float: right;
@@ -192,7 +201,11 @@ body {
 
 
 /**********************/
+
+
 /** General Styling ***/
+
+
 /**********************/
 
 body {
@@ -207,11 +220,18 @@ button {
   z-index: 50;
 }
 
-/**********************/
-/** Popup Styling *****/
+
 /**********************/
 
+
+/** Popup Styling *****/
+
+
+/**********************/
+
+
 /* Title bar */
+
 #content-titlebar {
   background: #144A7F;
   font-size: 21.7px;
@@ -228,7 +248,9 @@ button {
   font-weight: bold;
 }
 
+
 /* Controls */
+
 #back-button {
   float: left;
 }
@@ -245,7 +267,9 @@ div#frame-controls {
   margin-top: 15px;
 }
 
+
 /* Content display frame */
+
 div#frame-content {
   overflow: hidden;
 }
@@ -267,7 +291,9 @@ div#frame-content {
   margin: 0 25px 25px 25px;
 }
 
+
 /* Body text */
+
 .body-box {
   flex-grow: 2;
   height: 100%;
@@ -278,7 +304,7 @@ div#frame-content {
 }
 
 .body-box p {
-  padding-top: 25px;
+  padding-top: 10px;
 }
 
 .body-title {
@@ -291,17 +317,32 @@ div#frame-content {
   margin-right: 30px;
 }
 
-label > input{ /* HIDE RADIO */
-  display:none;
+.questions {
+  font-style: italic;
+  font-size: 0.8em;
 }
-label > input + img{ /* IMAGE STYLES */
-  cursor:pointer;
-  border:4px solid transparent;
-  max-width: 50px;
+
+#house-selector {
+  display: flex;
+  flex-direction: row;
 }
-label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
-  border:4px solid #f00;
-  max-width: 50px;
+
+label > input {
+  /* HIDE RADIO */
+  display: none;
+}
+
+label > input + img {
+  /* IMAGE STYLES */
+  cursor: pointer;
+  border: 4px solid transparent;
+  max-width: 70px;
+}
+
+label > input:checked + img {
+  /* (CHECKED) IMAGE STYLES */
+  border: 4px solid #144A7F;
+  max-width: 70px;
 }
 
 div#frame {
@@ -310,8 +351,13 @@ div#frame {
   flex-direction: column;
 }
 
+
 /**********************/
+
+
 /**** Content Boxes ***/
+
+
 /**********************/
 
 #content0 {
@@ -366,11 +412,18 @@ div#frame {
   opacity: 0;
 }
 
-/**********************/
-/***** Responsive *****/
+
 /**********************/
 
+
+/***** Responsive *****/
+
+
+/**********************/
+
+
 /* small screens */
+
 @media all and (min-width: 300px) {
   #frame {
     background-color: #fefefe;
@@ -386,7 +439,7 @@ div#frame {
   .body-box {
     padding-left: 0px;
     width: 70%;
-	min-height: 250px;
+    min-height: 250px;
   }
   .body-text {
     width: 100%;
@@ -409,9 +462,16 @@ div#frame {
   .body-box {
     padding-left: 0px;
     width: 70%;
+    height: auto;
   }
   .body-text {
     width: 100%;
+  }
+  label > input + img {
+    max-width: 50px;
+  }
+  label > input:checked + img {
+    max-width: 50px;
   }
 }
 
@@ -435,5 +495,6 @@ div#frame {
   #body-box {
     transform: translateY(40%);
     width: 70%;
+    min-height: 250px;
   }
 }
