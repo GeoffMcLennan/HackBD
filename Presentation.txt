@@ -1,0 +1,24 @@
+White Glove - Indoor Assisted Delivery
+
+
+Why did we focus on this?
+	Refusal to accept delivery by customer
+	Customer accepting unacticipated charges
+	Returning and re-stocking product in warehouse
+	Lower customer satisfaction
+	Extensive resource waste
+
+What is Build Direct's approach?
+	Customer calls HQ
+	Customer is asked questions and provide a quote
+	
+
+What is our solution?
+	Prior to checking out, offere White Glove Service
+	Automate the beginning of the phone call with HTML forms
+	Give a reference # for customer to call in with.
+
+How is this implemented?
+	Using a CSS Overlay Window
+	Cart metrics are pulled, and the order summed
+	White Glove service based off various choice metrics
