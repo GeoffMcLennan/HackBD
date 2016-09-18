@@ -306,64 +306,6 @@ div#frame {
   padding-bottom: 40px;
 }
 
-
-/*house selector buttons */
-
-#house-selector input {
-  margin: 0;
-  padding: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-#house-selector input:active +.selector {
-  opacity: .9;
-}
-
-#house-selector input:checked +.selector {
-  -webkit-filter: none;
-  -moz-filter: none;
-  filter: none;
-}
-
-.selector {
-  cursor: pointer;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 100px;
-  height: 105px;
-  -webkit-transition: all 100ms ease-in;
-  -moz-transition: all 100ms ease-in;
-  transition: all 100ms ease-in;
-  -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
-  -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
-  filter: brightness(1.8) grayscale(1) opacity(.7);
-}
-
-.selector:hover {
-  -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
-  -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
-  filter: brightness(1.2) grayscale(.5) opacity(.9);
-}
-
-.house {
-  background-image: url(../images/house-selector/house.png)
-}
-
-;
-.yard {
-  background-image: url(../images/house-selector/yard.png)
-}
-
-;
-.apartment {
-  background-image: url(../images/house-selector/apartment.png)
-}
-
-;
-
 /* small screens */
 
 @media all and (min-width: 300px) {
