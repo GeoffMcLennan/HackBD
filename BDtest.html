@@ -27,9 +27,9 @@
 	  		items.push("</ul></li>");
 	  		return items;
         }
-      
+
         $.ajax({
-            url: "https://api.builddirect.io/products/10089623?" + $.param(params),
+            url: "https://api.builddirect.io/products/15118251?" + $.param(params),
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","d83e94bef8644cec98cd9b9662f534c8");
@@ -46,15 +46,18 @@
   					items.push(expandObject(val, key));
   					//items.push( "<li id='" + key + "'>" + key + ": " + val + "</li>" );
   					//items.push("<li>" + $.type(val) + "</li>");
-  				} else {			    	
+  				} else {
 			    	items.push( "<li id='" + key + "'>" + key + ": " + val + "</li>" );
 			    }
 			});
- 
+
 			$( "<ul/>", {
 			    "class": "my-new-list",
 			    html: items.join( "" )
 			}).appendTo( "body" );*/
+
+
+            $("p").append(data.data.skuNumber);
 			console.log(data);
         })
         .fail(function() {

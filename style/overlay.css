@@ -142,6 +142,15 @@ body {
 }
 
 
+/**********************/
+
+
+/***** Modal Popup ****/
+
+
+/**********************/
+
+
 /* The Modal (background) */
 
 .modal {
@@ -191,15 +200,16 @@ body {
 }
 
 
-/* Content style */
+/**********************/
+
+
+/** General Styling ***/
+
+
+/**********************/
 
 body {
-  font-family: HelveticaNeue, Helvetica, sans-serif
-}
-
-#content-carousel {
-  position: relative;
-  clear: both;
+  font-family: HelveticaNeue, Helvetica, sans serif;
 }
 
 button {
@@ -209,6 +219,18 @@ button {
   font-size: 1em;
   z-index: 50;
 }
+
+
+/**********************/
+
+
+/** Popup Styling *****/
+
+
+/**********************/
+
+
+/* Title bar */
 
 #content-titlebar {
   background: #144A7F;
@@ -226,6 +248,9 @@ button {
   font-weight: bold;
 }
 
+
+/* Controls */
+
 #back-button {
   float: left;
 }
@@ -241,9 +266,17 @@ div#frame-controls {
 #frame-controls {
   margin-top: 15px;
 }
-  
+
+
+/* Content display frame */
+
 div#frame-content {
   overflow: hidden;
+}
+
+#content-carousel {
+  position: relative;
+  clear: both;
 }
 
 .content-body {
@@ -253,6 +286,13 @@ div#frame-content {
   align-items: center;
   height: 100%;
 }
+
+#picture {
+  margin: 0 25px 25px 25px;
+}
+
+
+/* Body text */
 
 .body-box {
   flex-grow: 2;
@@ -264,7 +304,7 @@ div#frame-content {
 }
 
 .body-box p {
-  padding-top: 25px;
+  padding-top: 10px;
 }
 
 .body-title {
@@ -277,21 +317,32 @@ div#frame-content {
   margin-right: 30px;
 }
 
-#picture {
-  margin: 0 25px 25px 25px;
+.questions {
+  font-style: italic;
+  font-size: 0.8em;
 }
 
-label > input{ /* HIDE RADIO */
-  display:none;
+#house-selector {
+  display: flex;
+  flex-direction: row;
 }
-label > input + img{ /* IMAGE STYLES */
-  cursor:pointer;
-  border:4px solid transparent;
-  max-width: 50px;
+
+label > input {
+  /* HIDE RADIO */
+  display: none;
 }
-label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
-  border:4px solid #f00;
-  max-width: 50px;
+
+label > input + img {
+  /* IMAGE STYLES */
+  cursor: pointer;
+  border: 4px solid transparent;
+  max-width: 70px;
+}
+
+label > input:checked + img {
+  /* (CHECKED) IMAGE STYLES */
+  border: 4px solid #144A7F;
+  max-width: 70px;
 }
 
 div#frame {
@@ -299,6 +350,15 @@ div#frame {
   min-width: 300px;
   flex-direction: column;
 }
+
+
+/**********************/
+
+
+/**** Content Boxes ***/
+
+
+/**********************/
 
 #content0 {
   z-index: 12;
@@ -352,9 +412,15 @@ div#frame {
   opacity: 0;
 }
 
-.question {
-  padding-bottom: 40px;
-}
+
+/**********************/
+
+
+/***** Responsive *****/
+
+
+/**********************/
+
 
 /* small screens */
 
@@ -373,7 +439,7 @@ div#frame {
   .body-box {
     padding-left: 0px;
     width: 70%;
-	min-height: 250px;
+    min-height: 250px;
   }
   .body-text {
     width: 100%;
@@ -396,9 +462,16 @@ div#frame {
   .body-box {
     padding-left: 0px;
     width: 70%;
+    height: auto;
   }
   .body-text {
     width: 100%;
+  }
+  label > input + img {
+    max-width: 50px;
+  }
+  label > input:checked + img {
+    max-width: 50px;
   }
 }
 
@@ -422,5 +495,6 @@ div#frame {
   #body-box {
     transform: translateY(40%);
     width: 70%;
+    min-height: 250px;
   }
 }

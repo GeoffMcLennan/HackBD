@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing Page</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var totalWeight;
+        var numStairs;
+        var distance;
+        var palletCount;
+        var boxCount;
+        var delArea;
+        var chokePoint;
+        var selectArea = [["yard", 0], ["house", 100], ["apartment", 200]];
+    	var selectDistance = [["0 - 15ft", 0], ["15 - 30ft", 30], ["30 - 50ft", 70], ["50+ft", 120]];
+        var selectStairs = [["Flat Surface", 0], ["One Storey", 75], ["Two Stories", 120], ["Three or more stories", 150]];
+        var selectChoke = [["Less than 48", 100], ["Greater than 48", 0]];
+
+    </script>
+    <script src="scripts/fetchProduct.js" type="text/javascript"></script>
+    <script src="scripts/calc.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="skuInput">
+            <p>
+                Sku:
+                <input type="text" id="skuNumber" name="skuNumber">
+                15118251
+            </p>
+
+            <p>
+                Box Count:
+                <input type="text" id="boxCount" name="boxCount">
+            </p>
+
+            <p>
+                Pallet Count:
+                <input type="text" id="palletCount" name="palletCount">
+            </p>
+
+            <p>
+                Delivery area:
+                <select id="location">
+                    <option value="0">Yard</option>
+                    <option value="1">House</option>
+                    <option value="2">Apartment</option>
+                </select>
+            </p>
+
+            <p>
+                Distance to delivery location:
+                <select id="distance">
+                    <option value="0" selected="selected">0 - 15ft</option>
+                    <option value="1">15 - 30ft</option>
+                    <option value="2">30 - 50ft</option>
+                    <option value="3">Greater than 50ft</option>
+                </select>
+            </p>
+
+            <p>
+                Number of stairs:
+                <select id="numStairs">
+                    <option value="0">Flat Surface</option>
+                    <option value="1">One Storey</option>
+                    <option value="2">Two Stories</option>
+                </select>
+            </p>
+
+            <p>
+                Narrowest space (inches):
+                <select id="chokePoint">
+                    <option value="0">Less than 48"</option>
+                    <option value="1">Greater than 48"</option>
+                </select>
+            </p>
+
+            <p>
+                <button onclick="fetchProduct();">Calculate!</button>
+            </p>
+    </div>
+
+    <p id="skuInput"></p>
+
+    <p id="skuOutput"></p>
+</body>
+</html>
