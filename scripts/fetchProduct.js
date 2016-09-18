@@ -30,19 +30,13 @@ function getParams(weightPerBox) {
     boxCount = $("input#boxCount").val();
     palletCount = $("input#palletCount").val();
     delArea = $("select#location").val();
-    distance = $("input#distance").val();
+    distance = parseInt($("input#distance").val());
     numStairs = $("input#numStairs").val();
-    var chokePoint = $("input#chokePoint").val();
+    chokePoint = $("input#chokePoint").val();
 
     totalWeight = weightPerBox * boxCount;
 
-    if ((chokePoint < 48) || (numStairs > 0)){
-        unpack = true;
-    } else {
-        unpack = false;
-    }
-
     //$("p#skuOutput").append(totalWeight + ", " + numStairs + ", " + distance + ", "
     //    + palletCount + ", " + boxCount + ", " + unpack + ", " + delArea);
-
+    calc();
 }
