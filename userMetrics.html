@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<script>
+const CHARGE_FOR_INSIDE_DELIVERY = 50;
+const CHARGE_FOR_OUTSIDE_DELIVERY = 30;
+const CHARGE_FOR_BEHIND_DELIVERY = 70;
+
+const CHARGE_FOR_NO_STAIRS = 0;
+const CHARGE_FOR_ONE_STORY = 30;
+const CHARGE_FOR_TWO_STORIES = 60;
+const CHARGE_FOR_THREE_OR_MORE_STORIES = 90;
+
+const CHARGE_FOR_0_TO_30 = 100;
+const CHARGE_FOR_30_TO_40 = 80;
+const CHARGE_FOR_GREATER_THAN_40 = 0;
+
+const CHARGE_FOR_LESS_THAN_15 = 0;
+const CHARGE_FOR_15_TO_30 = 30;
+const CHARGE_FOR_30_TO_50 = 60;
+const CHARGE_FOR_MORE_THAN_50 = 100;
+
+var finLocation = 0;
+var finElevation = 0;
+var finWidth = 0;
+var finHeight = 0;
+var finDistance = 0;
+var finTotal = 0;
+
+function locations(){
+	var myList=document.getElementById("myList");
+	finLocation = myList.options[myList.selectedIndex].value;
+	document.getElementById("location").value=finLocation;
+}
+function elevations(){
+	var elevationList=document.getElementById("elevationList");
+	finElevation = elevationList.options[elevationList.selectedIndex].value;
+	document.getElementById("elevation").value=finElevation;
+}
+function widths(){
+	var widthList=document.getElementById("widthList");
+	finWidth = widthList.options[widthList.selectedIndex].value;
+	document.getElementById("width").value=finWidth;
+}
+function distances(){
+	var distanceList=document.getElementById("distanceList");
+	finDistance = distanceList.options[distanceList.selectedIndex].value;
+	document.getElementById("distance").value=finDistance;
+}
+function calculateLocation(){
+	if (finLocation == 0){
+		alert("Entry field missing. Please put in a value for location");
+	}
+	else if (finLocation == 1){
+		finTotal += CHARGE_FOR_INSIDE_DELIVERY;
+	}
+	else if (finLocation == 2){
+		finTotal += CHARGE_FOR_OUTSIDE_DELIVERY;
+	}
+	else if (finLocation == 3){
+		finTotal += CHARGE_FOR_BEHIND_DELIVERY;
+	}
+}
+function calculateElevation(){
+	if (finElevation == 0){
+		alert("Entry field missing. Please put in a value for elevation");
+	}
+	else if (finElevation == 1){
+		finTotal += CHARGE_FOR_NO_STAIRS;
+	}
+	else if (finElevation == 2){
+		finTotal += CHARGE_FOR_ONE_STORY;
+	}
+	else if (finElevation == 3){
+		finTotal += CHARGE_FOR_TWO_STORIES;
+	}
+	else if (finElevation == 4){
+		finTotal += CHARGE_FOR_THREE_OR_MORE_STORIES;
+	}
+}
+
+function calculateWidth(){
+	if (finWidth == 0){
+		alert("Entry field missing. Please put in a value for width");
+	}
+	else if (finWidth == 1){
+		finTotal += CHARGE_FOR_0_TO_30;
+	}
+	else if (finWidth == 2){
+		finTotal += CHARGE_FOR_30_TO_40;
+	}
+	else if (finWidth == 3){
+		finTotal += CHARGE_FOR_GREATER_THAN_40;
+	}
+}
+
+function calculateDistance(){
+	if (finDistance == 0){
+		alert("Entry field missing. Please put in a value for distance");
+	}
+	else if (finDistance == 1){
+		finTotal += CHARGE_FOR_LESS_THAN_15;
+	}
+	else if (finDistance == 2){
+		finTotal += CHARGE_FOR_15_TO_30;
+	}
+	else if (finDistance == 3){
+		finTotal += CHARGE_FOR_30_TO_50;
+	}
+	else if (finDistance == 4){
+		finTotal += CHARGE_FOR_MORE_THAN_50;
+	}
+}
+
+function masterCalculate(){
+	calculateElevation();
+	calculateLocation();
+	calculateWidth();
+	document.getElementById("finalTotal").textContent= finTotal;
+	return false;
+}
+</script>
+<body>
+<form onsubmit="return masterCalculate()">
+<b>Where do you want your product dropped off?</b>
+<select id="myList" onchange="locations()">
+	<option value="0">Choose one</option>
+	<option value="1">Inside the house</option>
+	<option value="2">Outside the house</option>
+	<option value="3">Behind the house</option>
+</select>
+<p>Your location: <input type="text" id="location" size="20"></p>
+
+<b>What is the elevation of your destination?</b>
+<select id="elevationList" onchange="elevations()">
+	<option value="0">Choose one</option>
+	<option value="1">No steps or stairs</option>
+	<option value="2">One story</option>
+	<option value="3">Two stories</option>
+	<option value="4">Three stories or more</option>
+</select>
+<p>Your elevation: <input type="text" id="elevation" size="20"></p>
+
+<b>What is the narrowest width in your dropoff route?</b>
+<select id="widthList" onchange="widths()">
+	<option value="0">Choose one</option>
+	<option value="1">0 - 30</option>
+	<option value="2">30 - 40</option>
+	<option value="3">Greater than 40</option>
+</select>
+<p>Your narrowest width: <input type="text" id="width" size="20"></p>
+	
+<b>What is the distance to your location?</b>
+<select id="distanceList" onchange="distances()">
+	<option value="0">Choose one</option>
+	<option value="1">Less than 15 feet</option>
+	<option value="2">15 feet to 30 feet</option>
+	<option value="3">30 feet to 50 feet</option>
+	<option value="4">More than 50 feet</option>
+</select>
+<p>Your lowest height: <input type="text" id="distance" size="20"></p>
+<input type="submit" value="submit">
+</form>
+
+<a>Quote total <span id="finalTotal"></span></a>
+
+</body>
+</html>
