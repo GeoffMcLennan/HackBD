@@ -1,6 +1,37 @@
 <!DOCTYPE html>
-<html>
+<script>
+var finLocation;
+var finElevation;
+var finWidth;
+var finHeight;
+var finDistance;
 
+function locations(){
+	var myList=document.getElementById("myList");
+	finLocation = myList.options[myList.selectedIndex].text;
+	document.getElementById("location").value=finLocation;
+}
+function elevations(){
+	var elevationList=document.getElementById("elevationList");
+	finElevation = elevationList.options[elevationList.selectedIndex].text;
+	document.getElementById("elevation").value=finElevation;
+}
+function widths(){
+	var widthList=document.getElementById("widthList");
+	finWidth = widthList.options[widthList.selectedIndex].text;
+	document.getElementById("width").value=finWidth;
+}
+function heights(){
+	var heightList=document.getElementById("heightList");
+	finHeight = heightList.options[heightList.selectedIndex].text;
+	document.getElementById("height").value=finHeight;
+}
+function distances(){
+	var distanceList=document.getElementById("distanceList");
+	finDistance = distanceList.options[distanceList.selectedIndex].text;
+	document.getElementById("distance").value=finDistance;
+}
+</script>
 <head>
   <meta charset="utf-8">
   <link href="../style/overlay.css" rel="stylesheet" type="text/css">
@@ -28,8 +59,6 @@
               <h2 class="body-title">Welcome!</h2>
               <p class="body-text">Our Inside Delivery tool will guide you through the steps needed to get an instant delivery quote.
               </p>
-              <br>
-              <br>
               <br>
             </div>
           </div>
@@ -66,11 +95,14 @@
               <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
               </p>
               <br>
-              <form class="question">
-                <select>
-                  <option value="house">HOUSE</option>
-                </select>
-              </form>
+              <b>What is the narrowest width in your dropoff route?</b>
+					<select id="widthList" onchange="widths()">
+						<option>28 inches</option>
+						<option>30 inches</option>
+						<option>32 inches</option>
+						<option>More than 32 inches</option>
+						<option>Less than 32 inches</option>
+					</select>
               <br>
               <br>
             </div>
@@ -85,11 +117,15 @@
               <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
               </p>
               <br>
-              <form class="question">
-                <select>
-                  <option value="house">HOUSE</option>
-                </select>
-              </form>
+              <b>What is the lowest height in your dropoff route?</b>
+					<select id="heightList" onchange="heights()">
+						<option>6 feet</option>
+						<option>8 feet</option>
+						<option>10 feet</option>
+						<option>More than 10 inches</option>
+						<option>Less than 6 inches</option>
+					</select>
+				</form>
             </div>
           </div>
         </div>
