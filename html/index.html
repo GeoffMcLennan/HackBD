@@ -12,22 +12,17 @@
         var boxCount;
         var delArea;
         var chokePoint;
-        var selectArea = [		["yard", CHARGE_FOR_OUTSIDE_DELIVERY], 
-								["house", CHARGE_FOR_HOUSE_DELIVERY], 
-								["apartment", CHARGE_FOR_APARTMENT_DELIVERY]];
-    	var selectDistance = [	["0 - 15ft", 0], s
-								["15 - 30ft", 30], 
-								["30 - 50ft", 70], 
-								["50+ft", 120]];
-        var selectStairs = [	["Flat Surface", 0], 
-								["One Storey", 75], 
-								["Two Stories", 150]];
-        var selectChoke = [		["Less than 48", 100], 
-								["Greater than 48", 0]];
+        var selectArea = [["yard", 0], ["house", 100], ["apartment", 200]];
+    	var selectDistance = [["0 - 15ft", 0], ["15 - 30ft", 30], ["30 - 50ft", 70], ["50+ft", 120]];
+        var selectStairs = [["Flat Surface", 0], ["One Storey", 75], ["Two Stories", 150]];
+        var selectChoke = [["Less than 48", 100], ["Greater than 48", 0]];
 
-const CHARGE_FOR_YARD_DELIVERY = 0;
-const CHARGE_FOR_HOUSE_DELIVERY = 100;
-const CHARGE_FOR_APARTMENT_DELIVERY = 200;
+    </script>
+	
+<script>
+const CHARGE_FOR_OUTSIDE_DELIVERY = 30;
+const CHARGE_FOR_INSIDE_DELIVERY = 50;
+const CHARGE_FOR_BEHIND_DELIVERY = 70;
 
 const CHARGE_FOR_NO_STAIRS = 0;
 const CHARGE_FOR_ONE_STORY = 30;
