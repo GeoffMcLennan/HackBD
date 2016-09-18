@@ -30,9 +30,9 @@ function getParams(weightPerBox) {
     boxCount = $("input#boxCount").val();
     palletCount = $("input#palletCount").val();
     delArea = $("select#location").val();
-    distance = parseInt($("input#distance").val());
-    numStairs = $("input#numStairs").val();
-    chokePoint = $("input#chokePoint").val();
+    distance = parseInt($("select#distance").val());
+    numStairs = $("select#numStairs").val();
+    chokePoint = $("select#chokePoint").val();
 
     totalWeight = weightPerBox * boxCount;
 
