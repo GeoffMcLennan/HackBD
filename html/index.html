@@ -1,70 +1,15 @@
 <!DOCTYPE html>
-<!-- <script>
-  var finLocation;
-  var finElevation;
-  var finWidth;
-  var finHeight;
-  var finDistance;
-
-  function locations() {
-    var myList = document.getElementById("myList");
-    finLocation = myList.options[myList.selectedIndex].text;
-    document.getElementById("location").value = finLocation;
-  }
-
-  function elevations() {
-    var elevationList = document.getElementById("elevationList");
-    finElevation = elevationList.options[elevationList.selectedIndex].text;
-    document.getElementById("elevation").value = finElevation;
-  }
-
-  function widths() {
-    var widthList = document.getElementById("widthList");
-    finWidth = widthList.options[widthList.selectedIndex].text;
-    document.getElementById("width").value = finWidth;
-  }
-
-  function heights() {
-    var heightList = document.getElementById("heightList");
-    finHeight = heightList.options[heightList.selectedIndex].text;
-    document.getElementById("height").value = finHeight;
-  }
-
-  function distances() {
-    var distanceList = document.getElementById("distanceList");
-    finDistance = distanceList.options[distanceList.selectedIndex].text;
-    document.getElementById("distance").value = finDistance;
-  }
-
-  function calculate() {
-    if (finLocation.equalsIgnoreCase(locationsEnum.) {
-
-      }
-    }
-
-</script> -->
 
 <head>
-    <meta charset="utf-8">
-    <link href="../style/overlay.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script type="text/javascript">
-        var totalWeight;
-        var numStairs;
-        var distance;
-        var palletCount;
-        var boxCount;
-        var delArea;
-        var chokePoint;
-        var selectArea = [["yard", 0], ["house", 100], ["apartment", 200]];
-    	var selectDistance = [["0 - 15ft", 0], ["15 - 30ft", 30], ["30 - 50ft", 70], ["50+ft", 120]];
-        var selectStairs = [["Flat Surface", 0], ["One Storey", 75], ["Two Stories", 150]];
-        var selectChoke = [["Less than 48", 100], ["Greater than 48", 0]];
+  <meta charset="utf-8">
+  <link href="../style/overlay.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../scripts/globalVariables.js"></script>
+  <script type="text/javascript" src="../scripts/calculate.js"></script>
 
-    </script>
-    <script src="../scripts/fetchProduct.js" type="text/javascript"></script>
-    <script src="../scripts/calc.js" type="text/javascript"></script>
+  <script src="../scripts/fetchProduct.js" type="text/javascript"></script>
+  <script src="../scripts/calc.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -108,7 +53,7 @@
               <b class="questions">Outdoor, house, or apartment?</b>
               <div id="house-selctor">
                 <label>
-                  <input type="radio" name="house-select" value="0" checked="checked"/>
+                  <input type="radio" name="house-select" value="0" checked="checked" />
                   <img src="..\images\house-selector\yard.png">
                 </label>
                 <label>
@@ -196,12 +141,12 @@
             <div class="body-box">
               <h2 class="body-title">We Care About the Details!</h2>
               <p class="body-text">
-                Please let us know any additional things that may help the White Glove service experts, and we will contact you if we have any questions.
+                Please let us know any additional things that may help our service experts. We will contact you if we have any questions.
               </p>
               <br>
               <!--<b class="questions">What is the narrowest width in your dropoff route?</b>-->
               <br>
-              <textarea rows="3" cols="30"></textarea>
+              <textarea rows="2" cols="20"></textarea>
               <br>
               <br>
             </div>
@@ -217,12 +162,13 @@
                 Based on our calculations, your Inside Delivery total will be:
               </p>
               <br>
-              <h1 id="estimate"></h1>
+              <h1 id="estimate" style="font-size: 1.5em; font-weight: bold;"></h1>
               <br>
-              <b>Thank you for using our White Glover service experts!</b>
-              <p id="disclaimer"> *Personalized quote dependent on the accuracy of information provided. Subject to ochange as determined by our Delivery Experts.<p>
-              <br>
-              <br>
+              <b>Thank you for using our White Glove service calculator!</b>
+              <p id="disclaimer"> *Personalized quote dependent on the accuracy of information provided. Subject to ochange as determined by our Delivery Experts.
+                <p>
+                  <br>
+                  <br>
             </div>
           </div>
           <div class="content-body" id="content-spacer">
@@ -253,112 +199,7 @@
     </div>
   </div>
 
-  <script>
-    // Get the modal
-    var modal = document.getElementById('overlay-container');
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementById("close-button");
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-
-    var currentIndex = 0;
-
-    $('#next-button').on('click', function() {
-      if (currentIndex == 0) {
-        $('#content0').css('display', 'none');
-        $('#content1').css('display', 'flex');
-        currentIndex++;
-      } else if (currentIndex == 1) {
-        $('#content1').css('display', 'none');
-        $('#content2').css('display', 'flex');
-        currentIndex++;
-      } else if (currentIndex == 2) {
-        $('#content2').css('display', 'none');
-        $('#content3').css('display', 'flex');
-        currentIndex++;
-      } else if (currentIndex == 3) {
-        $('#content3').css('display', 'none');
-        $('#content4').css('display', 'flex');
-        currentIndex++;
-      } else if (currentIndex == 4) {
-        $('#content4').css('display', 'none');
-        $('#content5').css('display', 'flex');
-        currentIndex++;
-      } else if (currentIndex == 5) {
-        $('#content5').css('display', 'none');
-        $('#content6').css('display', 'flex');
-        currentIndex++;
-        fetchProduct();
-      } else if (currentIndex == 6) {
-        $('#content0').css('display', 'none');
-        $('#content1').css('display', 'none');
-        $('#content2').css('display', 'none');
-        $('#content3').css('display', 'none');
-        $('#content4').css('display', 'none');
-        $('#content5').css('display', 'none');
-        $('#content6').css('display', 'none');
-        currentIndex++;
-      }
-    });
-
-    $('#back-button').on('click', function() {
-      if (currentIndex == 0) {
-        $('#content0').css('display', 'none');
-        $('#content1').css('display', 'none');
-        $('#content2').css('display', 'none');
-        $('#content3').css('display', 'none');
-        $('#content4').css('display', 'none');
-        $('#content5').css('display', 'none');
-        $('#content6').css('display', 'none');
-        currentIndex == 6;
-      } else if (currentIndex == 1) {
-        $('#content0').css('display', 'flex');
-        $('#content1').css('display', 'none');
-        currentIndex--;
-      } else if (currentIndex == 2) {
-        $('#content1').css('display', 'flex');
-        $('#content2').css('display', 'none');
-        currentIndex--;
-      } else if (currentIndex == 3) {
-        $('#content2').css('display', 'flex');
-        $('#content3').css('display', 'none');
-        currentIndex--;
-      } else if (currentIndex == 4) {
-        $('#content3').css('display', 'flex');
-        $('#content4').css('display', 'none');
-        currentIndex--;
-      } else if (currentIndex == 5) {
-        $('#content4').css('display', 'flex');
-        $('#content5').css('display', 'none');
-        currentIndex--;
-      } else if (currentIndex == 6) {
-        $('#content5').css('display', 'flex');
-        $('#content6').css('display', 'none');
-        currentIndex--;
-      }
-    });
-
-  </script>
-
+  <script type="text/javascript" src="../scripts/modal.js"></script>
 
 </body>
 

@@ -154,7 +154,7 @@ body {
 /* The Modal (background) */
 
 .modal {
-  display: block;
+  display: none;
   position: absolute;
   /* Stay in place */
   z-index: 1;
@@ -243,7 +243,7 @@ button {
 }
 
 #content-titlebar h1 {
-  font-size: 1.5em;
+  font-size: 1.0em;
   padding: 15px;
   font-weight: bold;
 }
@@ -253,10 +253,12 @@ button {
 
 #back-button {
   float: left;
+  padding: 10px;
 }
 
 #next-button {
   float: right;
+  padding: 10px;
 }
 
 div#frame-controls {
@@ -287,16 +289,12 @@ div#frame-content {
   height: 100%;
 }
 
-#picture {
-  margin: 0 25px 25px 25px;
-}
-
-
 /* Body text */
 
 .body-box {
   flex-grow: 2;
   height: 100%;
+  padding: 0 25px;
 }
 
 .body-box h2 {
@@ -359,60 +357,71 @@ div#frame {
 
 
 /**********************/
+ 
+#content1,
+#content2,
+#content3,
+#content4,
+#content5,
+#content6 {
+	position: absolute;
+	top: -15px;
+	display: none;
+}
 
 #content0 {
   z-index: 12;
-  top: 0;
+  top: -15px;
   position: absolute;
 }
 
 #content1 {
   z-index: 11;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content2 {
   z-index: 10;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content3 {
   z-index: 9;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content4 {
   z-index: 8;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content5 {
   z-index: 7;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content6 {
   z-index: 6;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content-spacer {
   opacity: 0;
 }
 
+/* Keep images small when used as radio buttons */
+  label > input + img {
+    max-width: 50px;
+  }
+  label > input:checked + img {
+    max-width: 50px;
+  }
 
+p#disclaimer {
+	font-size: 8px;
+	color: grey;
+}
+
+$estimate {
+  font-size: 1em;
+  font-weight: bold;
+}
+  
+  
 /**********************/
 
 
@@ -439,7 +448,9 @@ div#frame {
   .body-box {
     padding-left: 0px;
     width: 70%;
-    min-height: 250px;
+	min-width: 200px;
+    min-height: 300px;
+    padding: 0 25px;	
   }
   .body-text {
     width: 100%;
@@ -460,18 +471,14 @@ div#frame {
     align-items: center;
   }
   .body-box {
-    padding-left: 0px;
+    padding: 0 25px;
     width: 70%;
     height: auto;
+	min-width: 200px;
+    min-height: 250px;
   }
   .body-text {
     width: 100%;
-  }
-  label > input + img {
-    max-width: 50px;
-  }
-  label > input:checked + img {
-    max-width: 50px;
   }
 }
 
@@ -480,21 +487,16 @@ div#frame {
     background-color: #fefefe;
     margin: 10% auto;
     border: 1px solid #888;
-    width: 45%;
+    width: 60%;
     /* Could be more or less, depending on screen size */
   }
   .content-body {
     display: flex;
     flex-direction: row;
-    padding-left: 25px;
+    padding: 0 0 25px 25px;
     align-items: stretch;
   }
   .body-text {
     width: 100%;
-  }
-  #body-box {
-    transform: translateY(40%);
-    width: 70%;
-    min-height: 250px;
   }
 }
