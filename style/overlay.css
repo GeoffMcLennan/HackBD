@@ -243,7 +243,7 @@ button {
 }
 
 #content-titlebar h1 {
-  font-size: 1.5em;
+  font-size: 1.0em;
   padding: 15px;
   font-weight: bold;
 }
@@ -253,10 +253,12 @@ button {
 
 #back-button {
   float: left;
+  padding: 10px;
 }
 
 #next-button {
   float: right;
+  padding: 10px;
 }
 
 div#frame-controls {
@@ -355,53 +357,46 @@ div#frame {
 
 
 /**********************/
+ 
+#content1,
+#content2,
+#content3,
+#content4,
+#content5,
+#content6 {
+	position: absolute;
+	top: -15px;
+	display: none;
+}
 
 #content0 {
   z-index: 12;
-  top: 0;
+  top: -15px;
   position: absolute;
 }
 
 #content1 {
   z-index: 11;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content2 {
   z-index: 10;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content3 {
   z-index: 9;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content4 {
   z-index: 8;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content5 {
   z-index: 7;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content6 {
   z-index: 6;
-  top: 0;
-  position: absolute;
-  display: none;
 }
 
 #content-spacer {
@@ -493,7 +488,7 @@ p#disclaimer {
   .content-body {
     display: flex;
     flex-direction: row;
-    padding-left: 25px;
+    padding: 0 0 25px 25px;
     align-items: stretch;
   }
   .body-text {
