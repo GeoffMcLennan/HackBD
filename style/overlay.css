@@ -287,16 +287,12 @@ div#frame-content {
   height: 100%;
 }
 
-#picture {
-  margin: 0 25px 25px 25px;
-}
-
-
 /* Body text */
 
 .body-box {
   flex-grow: 2;
   height: 100%;
+  padding: 0 25px;
 }
 
 .body-box h2 {
@@ -412,7 +408,20 @@ div#frame {
   opacity: 0;
 }
 
+/* Keep images small when used as radio buttons */
+  label > input + img {
+    max-width: 50px;
+  }
+  label > input:checked + img {
+    max-width: 50px;
+  }
 
+p#disclaimer {
+	font-size: 8px;
+	color: grey;
+}  
+  
+  
 /**********************/
 
 
@@ -439,7 +448,9 @@ div#frame {
   .body-box {
     padding-left: 0px;
     width: 70%;
-    min-height: 250px;
+	min-width: 200px;
+    min-height: 300px;
+    padding: 0 25px;	
   }
   .body-text {
     width: 100%;
@@ -460,18 +471,14 @@ div#frame {
     align-items: center;
   }
   .body-box {
-    padding-left: 0px;
+    padding: 0 25px;
     width: 70%;
     height: auto;
+	min-width: 200px;
+    min-height: 250px;
   }
   .body-text {
     width: 100%;
-  }
-  label > input + img {
-    max-width: 50px;
-  }
-  label > input:checked + img {
-    max-width: 50px;
   }
 }
 
@@ -480,7 +487,7 @@ div#frame {
     background-color: #fefefe;
     margin: 10% auto;
     border: 1px solid #888;
-    width: 45%;
+    width: 60%;
     /* Could be more or less, depending on screen size */
   }
   .content-body {
@@ -491,10 +498,5 @@ div#frame {
   }
   .body-text {
     width: 100%;
-  }
-  #body-box {
-    transform: translateY(40%);
-    width: 70%;
-    min-height: 250px;
   }
 }

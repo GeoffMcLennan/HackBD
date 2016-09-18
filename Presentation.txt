@@ -14,7 +14,8 @@ What is Build Direct's approach?
 	
 
 What is our solution?
-	Prior to checking out, offere White Glove Service
+	Avoid the phone call
+	Prior to checking out, offer White Glove Service
 	Automate the beginning of the phone call with HTML forms
 	Give a reference # for customer to call in with.
 
