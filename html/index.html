@@ -1,5 +1,44 @@
 <!DOCTYPE html>
-<html>
+<script>
+  var finLocation;
+  var finElevation;
+  var finWidth;
+  var finHeight;
+  var finDistance;
+
+  function locations() {
+    var myList = document.getElementById("myList");
+    finLocation = myList.options[myList.selectedIndex].text;
+    document.getElementById("location").value = finLocation;
+  }
+
+  function elevations() {
+    var elevationList = document.getElementById("elevationList");
+    finElevation = elevationList.options[elevationList.selectedIndex].text;
+    document.getElementById("elevation").value = finElevation;
+  }
+
+  function widths() {
+    var widthList = document.getElementById("widthList");
+    finWidth = widthList.options[widthList.selectedIndex].text;
+    document.getElementById("width").value = finWidth;
+  }
+
+  function heights() {
+    var heightList = document.getElementById("heightList");
+    finHeight = heightList.options[heightList.selectedIndex].text;
+    document.getElementById("height").value = finHeight;
+  }
+
+  function distances() {
+    var distanceList = document.getElementById("distanceList");
+    finDistance = distanceList.options[distanceList.selectedIndex].text;
+    document.getElementById("distance").value = finDistance;
+  }
+
+  }
+
+</script>
 
 <head>
   <meta charset="utf-8">
@@ -25,16 +64,9 @@
               <img id="picture" src="../images/1.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 1</h2>
-              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              <h2 class="body-title">Welcome!</h2>
+              <p class="body-text">Our Inside Delivery tool will guide you through the steps needed to get an instant delivery quote.
               </p>
-              <br>
-              <form class="question">
-                <select>
-                  <option value="house">HOUSE</option>
-                </select>
-              </form>
-              <br>
               <br>
             </div>
           </div>
@@ -44,15 +76,23 @@
               <img id="picture" src="../images/2.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">Welcome! 2</h2>
+              <h2 class="body-title">About Your Home</h2>
               <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
               </p>
-              <br>
-              <form class="question">
-                <select>
-                  <option value="house">HOUSE</option>
-                </select>
-              </form>
+              <div id="house-selctor">
+				 <label>
+					<input type="radio" name="house-select" value="yard" />
+					<img src="..\images\house-selector\yard.png">
+				 </label>			  
+				 <label>
+					<input type="radio" name="house-select" value="house" />
+					<img src="..\images\house-selector\house.png">
+				 </label>				  
+				 <label>
+					<input type="radio" name="house-select" value="apartment" />
+					<img src="..\images\house-selector\apartment.png">
+				 </label>
+              </div>
               <br>
               <br>
             </div>
@@ -67,16 +107,106 @@
               <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
               </p>
               <br>
-              <form class="question">
-                <select>
-                  <option value="house">HOUSE</option>
-                </select>
-              </form>
+              <b>What is the narrowest width in your dropoff route?</b>
+              <select id="widthList" onchange="widths()">
+                <option>28 inches</option>
+                <option>30 inches</option>
+                <option>32 inches</option>
+                <option>More than 32 inches</option>
+                <option>Less than 32 inches</option>
+              </select>
               <br>
               <br>
             </div>
           </div>
 
+          <div class="content-body" id="content3">
+            <div class="content-img">
+              <img id="picture" src="../images/4.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome! 4</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <br>
+              <b>What is the narrowest width in your dropoff route?</b>
+              <select id="widthList" onchange="widths()">
+                <option>28 inches</option>
+                <option>30 inches</option>
+                <option>32 inches</option>
+                <option>More than 32 inches</option>
+                <option>Less than 32 inches</option>
+              </select>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content4">
+            <div class="content-img">
+              <img id="picture" src="../images/5.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome! 5</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <br>
+              <b>What is the narrowest width in your dropoff route?</b>
+              <select id="widthList" onchange="widths()">
+                <option>28 inches</option>
+                <option>30 inches</option>
+                <option>32 inches</option>
+                <option>More than 32 inches</option>
+                <option>Less than 32 inches</option>
+              </select>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content5">
+            <div class="content-img">
+              <img id="picture" src="../images/6.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome! 6</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <br>
+              <b>What is the narrowest width in your dropoff route?</b>
+              <select id="widthList" onchange="widths()">
+                <option>28 inches</option>
+                <option>30 inches</option>
+                <option>32 inches</option>
+                <option>More than 32 inches</option>
+                <option>Less than 32 inches</option>
+              </select>
+              <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="content-body" id="content6">
+            <div class="content-img">
+              <img id="picture" src="../images/7.png">
+            </div>
+            <div class="body-box">
+              <h2 class="body-title">Welcome! 7</h2>
+              <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
+              </p>
+              <br>
+              <b>What is the narrowest width in your dropoff route?</b>
+              <select id="widthList" onchange="widths()">
+                <option>28 inches</option>
+                <option>30 inches</option>
+                <option>32 inches</option>
+                <option>More than 32 inches</option>
+                <option>Less than 32 inches</option>
+              </select>
+              <br>
+              <br>
+            </div>
+          </div>
           <div class="content-body" id="content-spacer">
             <div class="content-img">
               <img id="picture" src="../images/1.png">
@@ -86,11 +216,14 @@
               <p class="body-text">In order to help us customize your Inside Delivery we need some details about your home.
               </p>
               <br>
-              <form class="question">
-                <select>
-                  <option value="house">HOUSE</option>
-                </select>
-              </form>
+              <b>What is the lowest height in your dropoff route?</b>
+              <select id="heightList" onchange="heights()">
+                <option>6 feet</option>
+                <option>8 feet</option>
+                <option>10 feet</option>
+                <option>More than 10 inches</option>
+                <option>Less than 6 inches</option>
+              </select>
             </div>
           </div>
         </div>
@@ -135,18 +268,36 @@
       if (currentIndex == 0) {
         $('#content0').css('display', 'none');
         $('#content1').css('display', 'flex');
-        $('#content2').css('display', 'none');
         currentIndex++;
       } else if (currentIndex == 1) {
-        $('#content0').css('display', 'none');
         $('#content1').css('display', 'none');
         $('#content2').css('display', 'flex');
         currentIndex++;
       } else if (currentIndex == 2) {
-        $('#content0').css('display', 'flex');
+        $('#content2').css('display', 'none');
+        $('#content3').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 3) {
+        $('#content3').css('display', 'none');
+        $('#content4').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 4) {
+        $('#content4').css('display', 'none');
+        $('#content5').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 5) {
+        $('#content5').css('display', 'none');
+        $('#content6').css('display', 'flex');
+        currentIndex++;
+      } else if (currentIndex == 6) {
+        $('#content0').css('display', 'none');
         $('#content1').css('display', 'none');
         $('#content2').css('display', 'none');
-        currentIndex = 0;
+        $('#content3').css('display', 'none');
+        $('#content4').css('display', 'none');
+        $('#content5').css('display', 'none');
+        $('#content6').css('display', 'none');
+        currentIndex++;
       }
     });
 
@@ -154,17 +305,35 @@
       if (currentIndex == 0) {
         $('#content0').css('display', 'none');
         $('#content1').css('display', 'none');
-        $('#content2').css('display', 'flex');
-        currentIndex = 2
+        $('#content2').css('display', 'none');
+        $('#content3').css('display', 'none');
+        $('#content4').css('display', 'none');
+        $('#content5').css('display', 'none');
+        $('#content6').css('display', 'none');
+        currentIndex == 6;
       } else if (currentIndex == 1) {
         $('#content0').css('display', 'flex');
         $('#content1').css('display', 'none');
-        $('#content2').css('display', 'none');
         currentIndex--;
       } else if (currentIndex == 2) {
-        $('#content0').css('display', 'none');
         $('#content1').css('display', 'flex');
         $('#content2').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 3) {
+        $('#content2').css('display', 'flex');
+        $('#content3').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 4) {
+        $('#content3').css('display', 'flex');
+        $('#content4').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 5) {
+        $('#content4').css('display', 'flex');
+        $('#content5').css('display', 'none');
+        currentIndex--;
+      } else if (currentIndex == 6) {
+        $('#content5').css('display', 'flex');
+        $('#content6').css('display', 'none');
         currentIndex--;
       }
     });
