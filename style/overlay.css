@@ -141,9 +141,11 @@ body {
   height: 100%;
 }
 
+/**********************/
+/***** Modal Popup ****/
+/**********************/
 
 /* The Modal (background) */
-
 .modal {
   display: block;
   position: absolute;
@@ -166,7 +168,6 @@ body {
 
 
 /* Modal Content/Box */
-
 #frame {
   background-color: #fefefe;
   margin: 10% auto;
@@ -177,7 +178,6 @@ body {
 
 
 /* The Close Button */
-
 #close-button {
   color: #fff;
   float: right;
@@ -191,15 +191,12 @@ body {
 }
 
 
-/* Content style */
+/**********************/
+/** General Styling ***/
+/**********************/
 
 body {
   font-family: HelveticaNeue, Helvetica, sans serif;
-}
-
-#content-carousel {
-  position: relative;
-  clear: both;
 }
 
 button {
@@ -210,6 +207,11 @@ button {
   z-index: 50;
 }
 
+/**********************/
+/** Popup Styling *****/
+/**********************/
+
+/* Title bar */
 #content-titlebar {
   background: #144A7F;
   font-size: 21.7px;
@@ -226,6 +228,7 @@ button {
   font-weight: bold;
 }
 
+/* Controls */
 #back-button {
   float: left;
 }
@@ -241,9 +244,15 @@ div#frame-controls {
 #frame-controls {
   margin-top: 15px;
 }
-  
+
+/* Content display frame */
 div#frame-content {
   overflow: hidden;
+}
+
+#content-carousel {
+  position: relative;
+  clear: both;
 }
 
 .content-body {
@@ -254,6 +263,11 @@ div#frame-content {
   height: 100%;
 }
 
+#picture {
+  margin: 0 25px 25px 25px;
+}
+
+/* Body text */
 .body-box {
   flex-grow: 2;
   height: 100%;
@@ -277,10 +291,6 @@ div#frame-content {
   margin-right: 30px;
 }
 
-#picture {
-  margin: 0 25px 25px 25px;
-}
-
 label > input{ /* HIDE RADIO */
   display:none;
 }
@@ -299,6 +309,10 @@ div#frame {
   min-width: 300px;
   flex-direction: column;
 }
+
+/**********************/
+/**** Content Boxes ***/
+/**********************/
 
 #content0 {
   z-index: 12;
@@ -352,12 +366,11 @@ div#frame {
   opacity: 0;
 }
 
-.question {
-  padding-bottom: 40px;
-}
+/**********************/
+/***** Responsive *****/
+/**********************/
 
 /* small screens */
-
 @media all and (min-width: 300px) {
   #frame {
     background-color: #fefefe;
