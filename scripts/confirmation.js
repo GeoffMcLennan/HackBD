@@ -1,8 +1,16 @@
-function confirmation() {
-  var frame = Document.getElementById('confirmation-content');
-  var house = Document.getElementByName('house-select').value();
-  var distance = Document.getElementByName('house-select').value();
+$(function confirmation() {
+  var frame = document.getElementById('confirmation-content');
+  var house = $(".house-radio").val();
+  var distance = $("")
+  var houseString;
   
-  frame.innerHTML("Destination type: " + house + "<br>"
-                  + "Distance: "
-}
+  if (house == 0) {
+    houseString = "Outdoors";
+  } else if (house == 1) {
+    houseString = "House";
+  } else if (house == 2) {
+    houseString = "Apartment";
+  }
+  
+  frame.innerHTML = "Destination type: " + houseString + "<br>";
+});

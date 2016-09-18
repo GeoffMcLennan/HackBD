@@ -12,6 +12,7 @@
   <script type="text/javascript" src="../scripts/fetchProduct.js"></script>
   <script src="../scripts/calc.js" type="text/javascript"></script>
   <script src="../scripts/load.js" type="text/javascript"></script>
+  <script src="../scripts/confirmation.js" type="text/javascript"></script>
   <script>
     load(arrayMetric);
   </script>
@@ -64,15 +65,15 @@
                 <b class="questions">Outdoor, house, or apartment?</b>
                 <div id="house-selctor">
                   <label>
-                    <input type="radio" name="house-select" value="0" checked="checked" />
+                    <input type="radio" name="house-select" value="0" checked="checked" class="house-radio"/>
                     <img src="..\images\house-selector\yard.png">
                   </label>
                   <label>
-                    <input type="radio" name="house-select" value="1" />
+                    <input type="radio" name="house-select" value="1" class="house-radio"/>
                     <img src="..\images\house-selector\house.png">
                   </label>
                   <label>
-                    <input type="radio" name="house-select" value="2" />
+                    <input type="radio" name="house-select" value="2" class="house-radio"/>
                     <img src="..\images\house-selector\apartment.png">
                   </label>
                 </div>
@@ -130,7 +131,7 @@
           </div>
         -->
 
-            <div class="content-body" id="content4">
+            <!-- <div class="content-body" id="content4">
               <div class="content-img">
                 <img id="picture" src="../images/5.png">
               </div>
@@ -148,9 +149,9 @@
                 <br>
                 <br>
               </div>
-            </div>
+            </div> -->
 
-            <div class="content-body" id="content5">
+            <div class="content-body" id="content2">
               <div class="content-img">
                 <img id="picture" src="../images/6.png">
               </div>
@@ -168,7 +169,7 @@
               </div>
             </div>
 
-            <!-- <div class="content-body" id="content6">
+            <div class="content-body" id="content3">
               <div class="content-img">
                 <img id="picture" src="../images/7.png">
               </div>
@@ -178,12 +179,12 @@
                   Please confirm that the information below is correct:
                 </p>
                 <br>
-                <p class="confirmation-content"></p>
+                <p id="confirmation-content">Confirmation</p>
               </div>
-            </div> -->
-            <div class="content-body" id="content6">
+            </div>
+            <div class="content-body" id="content4">
               <div class="content-img">
-                <img id="picture" src="../images/7.png">
+                <img id="picture" src="../images/8.png">
               </div>
               <div class="body-box">
                 <h2 class="body-title">Your Personalized Quote</h2>

@@ -22,6 +22,6 @@ var dist = new Metric("Distance", "range",[["Less than 15\'", 0], ["15 - 29\'", 
 
 var elevation = new Metric("Stairs", "range", [["no steps or stairs", 0], ["one story", 50],["two stories", 100],["Three or more stories", 200]],
     "No matter the journey, our White Glove service experts will get your goods where they need to go!", "What is the elevation of your destination?");
-    
+
 var arrayMetric = [dist, elevation];
 var chokePoint = new Metric();
