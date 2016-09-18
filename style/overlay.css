@@ -377,7 +377,8 @@ div#frame {
 #content3,
 #content4,
 #content5,
-#content6 {
+#content6,
+#content7 {
 	position: absolute;
 	top: -15px;
 	display: none;
@@ -411,6 +412,10 @@ div#frame {
 
 #content6 {
   z-index: 6;
+}
+
+#content7 {
+  z-index: 5;
 }
 
 #content-spacer {
