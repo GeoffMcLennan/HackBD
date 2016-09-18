@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script>
+<!-- <script>
   var finLocation;
   var finElevation;
   var finWidth;
@@ -42,17 +42,38 @@
       }
     }
 
-</script>
+</script> -->
 
 <head>
-  <meta charset="utf-8">
-  <link href="../style/overlay.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <link href="../style/overlay.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var totalWeight;
+        var numStairs;
+        var distance;
+        var palletCount;
+        var boxCount;
+        var delArea;
+        var chokePoint;
+        var selectArea = [["yard", 0], ["house", 100], ["apartment", 200]];
+    	var selectDistance = [["0 - 15ft", 0], ["15 - 30ft", 30], ["30 - 50ft", 70], ["50+ft", 120]];
+        var selectStairs = [["Flat Surface", 0], ["One Storey", 75], ["Two Stories", 150]];
+        var selectChoke = [["Less than 48", 100], ["Greater than 48", 0]];
+
+    </script>
+    <script src="../scripts/fetchProduct.js" type="text/javascript"></script>
+    <script src="../scripts/calc.js" type="text/javascript"></script>
 </head>
 
 <body>
   <!-- Trigger/Open The Modal -->
   <button id="myBtn">Open Modal</button>
+
+  <!-- Hidden inputs for testing -->
+  <input type="hidden" id="skuNumber" value="15118251">
+  <input type="hidden" id="boxCount" value="3">
 
   <!-- The Modal -->
   <div id="overlay-container" class="modal">
@@ -87,15 +108,15 @@
               <b class="questions">Outdoor, house, or apartment?</b>
               <div id="house-selctor">
                 <label>
-                  <input type="radio" name="house-select" value="yard" />
+                  <input type="radio" name="house-select" value="0" checked="checked"/>
                   <img src="..\images\house-selector\yard.png">
                 </label>
                 <label>
-                  <input type="radio" name="house-select" value="house" />
+                  <input type="radio" name="house-select" value="1" />
                   <img src="..\images\house-selector\house.png">
                 </label>
                 <label>
-                  <input type="radio" name="house-select" value="apartment" />
+                  <input type="radio" name="house-select" value="2" />
                   <img src="..\images\house-selector\apartment.png">
                 </label>
               </div>
@@ -115,12 +136,11 @@
               </p>
               <br>
               <b class="questions">What is the distance to your location?</b>
-              <select id="distanceList" onchange="distances()">
-                <option>Choose one</option>
-                <option>Less than 15'</option>
-                <option>15' - 30'</option>
-                <option>30' - 50'</option>
-                <option>More than 50'</option>
+              <select id="distanceList">
+                <option value="0">Less than 15&#39;</option>
+                <option value="1">15&#39; - 30&#39;</option>
+                <option value="2">30&#39; - 50&#39;</option>
+                <option value="3">More than 50&#39;</option>
               </select>
               <br>
               <br>
@@ -132,17 +152,17 @@
               <img id="picture" src="../images/4.png">
             </div>
             <div class="body-box">
-              <h2 class="body-title">It's All About the Elevation</h2>
+              <h2 class="body-title">It&#39;s All About the Elevation</h2>
               <p class="body-text">
                 No matter the journey, our White Glove service experts will get your goods where they need to go!
               </p>
               <br>
               <b class="questions">What is the elevation of your destination?</b>
-              <select id="elevationList" onchange="elevations()">
-                <option>Choose one</option>
-                <option>One story</option>
-                <option>Two stories</option>
-                <option>Apartment building</option>
+              <select id="elevationList">
+                <option value="0">No steps or stairs</option>
+                <option value="1">One story</option>
+                <option value="2">Two stories</option>
+                <option value="3">Three or more stories</option>
               </select>
               <br>
               <br>
@@ -159,14 +179,10 @@
                 With various shaped product, we need to ensure we can get everything through your doorways.
               </p>
               <br>
-              <b class="questions">What is the narrowest width in your dropoff route?</b>
-              <select id="widthList" onchange="widths()">
-                <option>Less than 28 inches</option>
-                <option>28 inches</option>
-                <option>30 inches</option>
-                <option>32 inches</option>
-                <option>More than 32 inches</option>
-                <option>No Doorways</option>
+              <b class="questions">What is the narrowest space that your shipment has to travel through?</b>
+              <select id="widthList">
+                <option value="0">Less than 48&#34; wide</option>
+                <option value="1">Greater than 48&#34; wide</option>
               </select>
               <br>
               <br>
@@ -183,7 +199,7 @@
                 Please let us know any additional things that may help the White Glove service experts, and we will contact you if we have any questions.
               </p>
               <br>
-              <b class="questions">What is the narrowest width in your dropoff route?</b>
+              <!--<b class="questions">What is the narrowest width in your dropoff route?</b>-->
               <br>
               <textarea rows="3" cols="30"></textarea>
               <br>
@@ -201,7 +217,7 @@
                 Based on our calculations, your Inside Delivery total will be:
               </p>
               <br>
-              <h1>###.##</h1>
+              <h1 id="estimate"></h1>
               <br>
               <b>Thank you for using our White Glover service experts!</b>
               <p id="disclaimer"> *Personalized quote dependent on the accuracy of information provided. Subject to ochange as determined by our Delivery Experts.<p>
@@ -218,7 +234,7 @@
               <p class="body-text">Black Spacer!
               </p>
               <br>
-              <b>Positioning, don't remove!?</b>
+              <b>Positioning, don&#39;t remove!?</b>
               <select id="heightList" onchange="heights()">
                 <option>0</option>
                 <option>0</option>
@@ -291,6 +307,7 @@
         $('#content5').css('display', 'none');
         $('#content6').css('display', 'flex');
         currentIndex++;
+        fetchProduct();
       } else if (currentIndex == 6) {
         $('#content0').css('display', 'none');
         $('#content1').css('display', 'none');

@@ -7,9 +7,7 @@ function calc() {
     whiteGloveBase += addBasedOnRange(totalWeight, weightRange);
     console.log(whiteGloveBase);
 
-    var selectDistance = [["0 - 15ft", 0], ["15 - 30ft", 30], ["30 - 50ft", 70], ["50+ft", 120]];
     //Add distance portion
-    console.log(window.distance);
     whiteGloveBase += selectDistance[distance][1];
     console.log(whiteGloveBase);
 
@@ -21,6 +19,8 @@ function calc() {
     whiteGloveBase += selectChoke[chokePoint][1];
 
     console.log(whiteGloveBase);
+
+    $("h1#estimate").append("$" + whiteGloveBase.toFixed(2));
 
 }
 
