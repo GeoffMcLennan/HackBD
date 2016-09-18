@@ -1,0 +1,7 @@
+.scalar-table table, th, td {
+  border: 1px solid black;
+}
+
+.scalar-table {
+  width: 100%;
+}

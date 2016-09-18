@@ -19,8 +19,9 @@ function calc() {
     whiteGloveBase += selectChoke[chokePoint][1];
 
     console.log(whiteGloveBase);
-
+    $("h1#estimate").empty();
     $("h1#estimate").append("$" + whiteGloveBase.toFixed(2));
+    whiteGloveBase = 150;
 
 }
 
