@@ -12,56 +12,136 @@
         var boxCount;
         var delArea;
         var chokePoint;
-        var selectArea = [["yard", 0], ["house", 100], ["apartment", 200]];
-    	var selectDistance = [["0 - 15ft", 0], ["15 - 30ft", 30], ["30 - 50ft", 70], ["50+ft", 120]];
-        var selectStairs = [["Flat Surface", 0], ["One Storey", 75], ["Two Stories", 150]];
-        var selectChoke = [["Less than 48", 100], ["Greater than 48", 0]];
+        var selectArea = [		["yard", CHARGE_FOR_OUTSIDE_DELIVERY], 
+								["house", CHARGE_FOR_HOUSE_DELIVERY], 
+								["apartment", CHARGE_FOR_APARTMENT_DELIVERY]];
+    	var selectDistance = [	["0 - 15ft", 0], s
+								["15 - 30ft", 30], 
+								["30 - 50ft", 70], 
+								["50+ft", 120]];
+        var selectStairs = [	["Flat Surface", 0], 
+								["One Storey", 75], 
+								["Two Stories", 150]];
+        var selectChoke = [		["Less than 48", 100], 
+								["Greater than 48", 0]];
 
-    </script>
-	
-<script>
-  var finLocation;
-  var finElevation;
-  var finWidth;
-  var finHeight;
-  var finDistance;
+const CHARGE_FOR_YARD_DELIVERY = 0;
+const CHARGE_FOR_HOUSE_DELIVERY = 100;
+const CHARGE_FOR_APARTMENT_DELIVERY = 200;
 
-  function locations() {
-    var myList = document.getElementById("myList");
-    finLocation = myList.options[myList.selectedIndex].text;
-    document.getElementById("location").value = finLocation;
-  }
+const CHARGE_FOR_NO_STAIRS = 0;
+const CHARGE_FOR_ONE_STORY = 30;
+const CHARGE_FOR_TWO_STORIES = 60;
+const CHARGE_FOR_THREE_OR_MORE_STORIES = 90;
 
-  function elevations() {
-    var elevationList = document.getElementById("elevationList");
-    finElevation = elevationList.options[elevationList.selectedIndex].text;
-    document.getElementById("elevation").value = finElevation;
-  }
+const CHARGE_FOR_0_TO_30 = 100;
+const CHARGE_FOR_30_TO_40 = 80;
+const CHARGE_FOR_GREATER_THAN_40 = 0;
 
-  function widths() {
-    var widthList = document.getElementById("widthList");
-    finWidth = widthList.options[widthList.selectedIndex].text;
-    document.getElementById("width").value = finWidth;
-  }
+const CHARGE_FOR_LESS_THAN_15 = 0;
+const CHARGE_FOR_15_TO_30 = 30;
+const CHARGE_FOR_30_TO_50 = 60;
+const CHARGE_FOR_MORE_THAN_50 = 100;
 
-  function heights() {
-    var heightList = document.getElementById("heightList");
-    finHeight = heightList.options[heightList.selectedIndex].text;
-    document.getElementById("height").value = finHeight;
-  }
+var finLocation = 0;
+var finElevation = 0;
+var finWidth = 0;
+var finHeight = 0;
+var finDistance = 0;
+var finTotal = 0;
 
-  function distances() {
-    var distanceList = document.getElementById("distanceList");
-    finDistance = distanceList.options[distanceList.selectedIndex].text;
-    document.getElementById("distance").value = finDistance;
-  }
+function locations(){
+	var myList=document.getElementById("myList");
+	finLocation = myList.options[myList.selectedIndex].value;
+	document.getElementById("location").value=finLocation;
+}
+function elevations(){
+	var elevationList=document.getElementById("elevationList");
+	finElevation = elevationList.options[elevationList.selectedIndex].value;
+	document.getElementById("elevation").value=finElevation;
+}
+function widths(){
+	var widthList=document.getElementById("widthList");
+	finWidth = widthList.options[widthList.selectedIndex].value;
+	document.getElementById("width").value=finWidth;
+}
+function distances(){
+	var distanceList=document.getElementById("distanceList");
+	finDistance = distanceList.options[distanceList.selectedIndex].value;
+	document.getElementById("distance").value=finDistance;
+}
+function calculateLocation(){
+	if (finLocation == 0){
+		alert("Entry field missing. Please put in a value for location");
+	}
+	else if (finLocation == 1){
+		finTotal += CHARGE_FOR_INSIDE_DELIVERY;
+	}
+	else if (finLocation == 2){
+		finTotal += CHARGE_FOR_OUTSIDE_DELIVERY;
+	}
+	else if (finLocation == 3){
+		finTotal += CHARGE_FOR_BEHIND_DELIVERY;
+	}
+}
+function calculateElevation(){
+	if (finElevation == 0){
+		alert("Entry field missing. Please put in a value for elevation");
+	}
+	else if (finElevation == 1){
+		finTotal += CHARGE_FOR_NO_STAIRS;
+	}
+	else if (finElevation == 2){
+		finTotal += CHARGE_FOR_ONE_STORY;
+	}
+	else if (finElevation == 3){
+		finTotal += CHARGE_FOR_TWO_STORIES;
+	}
+	else if (finElevation == 4){
+		finTotal += CHARGE_FOR_THREE_OR_MORE_STORIES;
+	}
+}
 
-  function calculate() {
-    if (finLocation.equalsIgnoreCase(locationsEnum.) {
+function calculateWidth(){
+	if (finWidth == 0){
+		alert("Entry field missing. Please put in a value for width");
+	}
+	else if (finWidth == 1){
+		finTotal += CHARGE_FOR_0_TO_30;
+	}
+	else if (finWidth == 2){
+		finTotal += CHARGE_FOR_30_TO_40;
+	}
+	else if (finWidth == 3){
+		finTotal += CHARGE_FOR_GREATER_THAN_40;
+	}
+}
 
-      }
-    }
+function calculateDistance(){
+	if (finDistance == 0){
+		alert("Entry field missing. Please put in a value for distance");
+	}
+	else if (finDistance == 1){
+		finTotal += CHARGE_FOR_LESS_THAN_15;
+	}
+	else if (finDistance == 2){
+		finTotal += CHARGE_FOR_15_TO_30;
+	}
+	else if (finDistance == 3){
+		finTotal += CHARGE_FOR_30_TO_50;
+	}
+	else if (finDistance == 4){
+		finTotal += CHARGE_FOR_MORE_THAN_50;
+	}
+}
 
+function masterCalculate(){
+	calculateElevation();
+	calculateLocation();
+	calculateWidth();
+	document.getElementById("finalTotal").textContent= finTotal;
+	return false;
+}
 </script> 	
 	
     <script src="../scripts/fetchProduct.js" type="text/javascript"></script>
