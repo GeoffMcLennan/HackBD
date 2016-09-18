@@ -92,6 +92,20 @@ video {
   vertical-align: baseline;
 }
 
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #aaae75;
+	background-image: url("../images/Background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	height: 1600px;
+}
 
 /* HTML5 display-role reset for older browsers */
 

@@ -135,6 +135,7 @@ function masterCalculate(){
 	calculateLocation();
 	calculateWidth();
 	document.getElementById("finalTotal").textContent= finTotal;
+	document.getElementById("back-button").textContent="Finish";
 	return false;
 }
 </script> 	
@@ -144,6 +145,11 @@ function masterCalculate(){
 </head>
 
 <body>
+<main>
+<img src="../images/Background.jpg" alt="" usemap="#Map" />
+<map name="Map" id="Map">
+    <area alt="" title="" id="imgMap" shape="poly" coords="1005,1159,1221,1158,1221,1199,1006,1200" />
+</map>
   <!-- Trigger/Open The Modal -->
   <button id="myBtn">Open Modal</button>
 
@@ -344,6 +350,15 @@ function masterCalculate(){
       modal.style.display = "block";
     }
 
+    // Get the button that opens the modal
+    var imgMap = document.getElementById("imgMap");
+	
+    // When the user clicks the button, open the modal
+    imgMap.onclick = function() {
+	  window.scroll(0,0);
+      modal.style.display = "block";
+    }
+	
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
       modal.style.display = "none";
@@ -384,6 +399,7 @@ function masterCalculate(){
         $('#content6').css('display', 'flex');
         currentIndex++;
         fetchProduct();
+		document.getElementById("next-button").textContent="Finish";
       } else if (currentIndex == 6) {
         $('#content0').css('display', 'none');
         $('#content1').css('display', 'none');
@@ -391,8 +407,7 @@ function masterCalculate(){
         $('#content3').css('display', 'none');
         $('#content4').css('display', 'none');
         $('#content5').css('display', 'none');
-        $('#content6').css('display', 'none');
-        currentIndex++;
+        modal.style.display = "none";
       }
     });
 
@@ -435,7 +450,7 @@ function masterCalculate(){
 
   </script>
 
-
+</main>
 </body>
 
 </html>
