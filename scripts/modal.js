@@ -47,6 +47,9 @@
 
       $(toggleOn).css('display', 'flex');
       $(toggleOff).css('display', 'none');
+      if (nextIndex == 6) {
+          fetchProduct();
+      }
     }
 
     $('#next-button').on('click', function () {
