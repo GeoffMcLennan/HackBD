@@ -414,7 +414,12 @@ div#frame {
 p#disclaimer {
 	font-size: 8px;
 	color: grey;
-}  
+}
+
+$estimate {
+  font-size: 1em;
+  font-weight: bold;
+}
   
   
 /**********************/
